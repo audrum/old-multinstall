@@ -1,6 +1,6 @@
 # windows_activators
 
-This is a project about open source activators for windows and office written in batch and powershell.
+This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**
 
 ## Office
 
