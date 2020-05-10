@@ -29,4 +29,4 @@ The [windows_multinstall.ps1](https://github.com/Audrum/windows_activators/blob/
 
 Also includes the Windows 10 activator ported to PowerShell. Currently working in porting the Office activator. Feel free to review the code and modify it.
 
-[Titulo](https://github.com/Audrum/windows_activators/edit/master/README.md#windows_activators)
+[Titulo](#windows_activators)
