@@ -1,4 +1,4 @@
-# windows_activators {#Title1}
+# windows_activators
 
 This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**
 
@@ -29,4 +29,4 @@ The [windows_multinstall.ps1](https://github.com/Audrum/windows_activators/blob/
 
 Also includes the Windows 10 activator ported to PowerShell. Currently working in porting the Office activator. Feel free to review the code and modify it.
 
-[Titulo](#Title1)
+[Titulo](https://github.com/Audrum/windows_activators/edit/master/README.md#windows_activators)
