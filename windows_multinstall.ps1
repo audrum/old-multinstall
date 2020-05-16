@@ -164,12 +164,14 @@ function End
 function menu
 {
     Banner
+    Write-Host ""
     Write-Host "1. Instalar lo básico (Chrome, Firefox, 7-zip)" -ForegroundColor Yellow
     Write-Host "2. Instalar Office" -ForegroundColor Yellow
     Write-Host "3. Activar Windows 10" -ForegroundColor Yellow
     Write-Host "4. Activar Office" -ForegroundColor Yellow
     Write-Host "5. Ejecutar todas las acciones anteriores" -ForegroundColor Yellow
     Write-Host "6. Salir" -ForegroundColor Yellow
+    Write-Host ""
 
     [int]$option = Read-Host "Seleccione una opción"
     
