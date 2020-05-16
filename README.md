@@ -27,5 +27,7 @@ The [windows_multinstall.ps1](https://github.com/Audrum/windows_activators/blob/
 * 7-zip
 * Optionally Office 365
 
-Also includes the Windows 10 activator ported to PowerShell. Currently working in porting the Office activator. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/). Feel free to review the code and modify it.
+Also includes the Windows 10 activator ported to PowerShell. Currently working in porting the Office activator. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/). 
+
+To execute the script, run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\windows_multinstaler.ps1`` and follow the instructions. Feel free to review the code and modify it.
 
