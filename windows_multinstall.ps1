@@ -79,6 +79,7 @@ function InstallOffice
             cls
             Menu
             }
+    }
 }
 
 function ActivateWindows
@@ -132,6 +133,7 @@ function ActivateWindows
             Write-Host "Proceso finalizado" -ForegroundColor Green
             Start-Sleep -s 5
             }
+    }
 }
 
 function ActivateOffice
@@ -156,6 +158,7 @@ function End
         '2' {
                 exit
                 }
+    }
 }
 
 function menu
@@ -201,6 +204,8 @@ function menu
 
         }
 
-    }  
+}
+
+menu  
 
 
