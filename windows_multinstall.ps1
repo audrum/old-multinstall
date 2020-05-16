@@ -6,7 +6,7 @@
     Write-Host "|   t.me/audrum    |" -ForegroundColor Green
     Write-Host "====================" -ForegroundColor Green
     Write-Host ""
-    Write-Host "La mayoría de funciones de este script solo funcionan en Windows 10"
+    Write-Host "La mayoría de funciones de este script solo funcionan en Windows 10" -ForegroundColor Magenta
 }
 
 function Basic
@@ -58,8 +58,8 @@ function InstallOffice
         Write-Host "Entorno listo." -ForegroundColor Magenta
         }
 
-    Write-Host "1. Descargar e instalar Office 365"
-    Write-Host "2. Solo instalar"
+    Write-Host "1. Descargar e instalar Office 365" -ForegroundColor Yellow
+    Write-Host "2. Solo instalar" -ForegroundColor Yellow
 
     [int]$office = Read-Host "Seleccione una opción"
 
