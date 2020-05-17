@@ -6,6 +6,9 @@ This is a project about open source activators for windows and office written in
 
 The [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) file is a batch script for activate Office 2019, it was written following some instructions from [msguides.com](https://msguides.com/) with a few modifications. Just open it and let it work. You can review the code and feel free to modify it. 
 
+## Office 365
+
+The [O365.cmd](https://github.com/Audrum/windows_activators/blob/master/O365.cmd) file is a batch script for activate Office 365, it was written following some instructions from [msguides.com](https://msguides.com/) with a few modifications. Just open it and let it work. You can review the code and feel free to modify it. 
 
 ## Windows 10
 
