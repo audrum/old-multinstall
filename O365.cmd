@@ -29,7 +29,7 @@ cscript //nologo ospp.vbs /sethst:%KMS% >nul
 echo ============================================================================
 echo.
 echo.
-cscript //nologo ospp.vbs /act | find /i "successful" && 
+cscript //nologo ospp.vbs /act | find /i "Actiación satisfactortia" && 
 (echo.
 if errorlevel 2 exit) || 
 (echo La conexión con el servidor KMS falló! Intentando con otro servidor...
