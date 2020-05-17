@@ -27,15 +27,15 @@ function Basic
         }
             
       Write-Host "Instalando Google Chrome..." -ForegroundColor Yellow
-      choco install GoogleChrome
+      choco install GoogleChrome -y
       Write-Host "Instalación finalizada" -ForegroundColor Green
       Write-Host ""
       Write-Host "Instalando Firefox..." -ForegroundColor Yellow
-      choco install Firefox
+      choco install Firefox -y
       Write-Host "Instalación finalizada" -ForegroundColor Green
       Write-Host ""
       Write-Host "Instalando 7-zip..." -ForegroundColor Yellow
-      choco install 7zip
+      choco install 7zip -y
       Write-Host "Instalación finalizada" -ForegroundColor Green
       Write-Host "Fin de las instalaciones" -ForegroundColor Green
       Start-Sleep -s 5
@@ -67,7 +67,7 @@ function InstallOffice
     {
         '1'{
             Write-Host "Iniciando descarga e instalación de Office 365..." -ForegroundColor Yellow
-            choco install office365proplus
+            choco install office365proplus -y
             Write-Host "Instalación  finalizada" -ForegroundColor Green
             Start-Sleep -s 5
             }
