@@ -1,4 +1,47 @@
-# windows_activators
+# Descripción en español
+
+## windows_activators
+
+Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**
+
+## Office 2019
+
+El script [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) está escrito en bacth y es para activar Office 2019, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
+
+## Office 365
+
+El script [O365.cmd](https://github.com/Audrum/windows_activators/blob/master/O365.cmd) está escrito en bacth y es para activar Office 365, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
+
+## Windows 10
+
+El script [W10.cmd](https://github.com/Audrum/windows_activators/blob/master/W10.cmd) es un archivo en batch que puede activar las siguiente versiones de Windows 10:
+
+* Windows 10 Home
+* Windows 10 Home Single Language
+* Windows 10 Pro
+
+También muestra un listado de seriales para cada versión de Windows 10 e incluso permite usar su propio serial en caso de tener uno. Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificarlo.
+
+
+## Windows Multinstall
+
+El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/multinstall.ps1) está escrito en PowerShell para make un poco mas fácil y rápido el proceso post instalación de Windows 10, ayudando a instalar automáticamente software básico como:
+
+* Google Chrome
+* Firefox
+* 7-zip
+* Optionally Office 365
+
+También tiene integrado el activador de Windows 10. Actualmente se está trabajando en integrar el activador de Office. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
+
+Antes de ejecutar el script debe asegurarse de que su pólitica de ejecución en PowerShell permita ejecutar scripts, si no es el caso, debe ejecutar el comando ``Set-ExecutionPolicy Unrestricted`` en PowerShell.
+
+Para ejecutar el script, abra una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell muévase hasta la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
+
+---
+# English description
+
+## windows_activators
 
 This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**
 
