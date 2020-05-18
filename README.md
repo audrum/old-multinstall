@@ -40,13 +40,13 @@ Antes de ejecutar el script debe asegurarse de que su pólitica de ejecución en
 Get-ExecutionPolicy
 ```
 
-Si el resultado es ``Restricted`` debe ejecutar el comando 
+Si el resultado es ``Restricted`` debe ejecutar el comando: 
 
 ```Powershell
 Set-ExecutionPolicy Unrestricted
 ```
 
-Para ejecutar el script, abra una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell muévase hasta la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
+Para ejecutar el script, abra una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
 
 ---
 # English description
@@ -85,7 +85,17 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 
 Also includes the Windows 10 activator ported to PowerShell. Currently working in porting the Office activator. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
-Before execute the script be sure that your Execution Policy allows run PowerShell scripts, if not, you can execute the command ``Set-ExecutionPolicy Unrestricted`` on PowerShell.
+Before execute the script be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
+
+```Powershell
+Get-ExecutionPolicy
+```
+
+If the result is ``Restricted`` you have to execute the command:
+
+```Powershell
+Set-ExecutionPolicy Unrestricted
+```
 
 To execute the script, run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\windows_multinstaler.ps1`` and follow the instructions. Feel free to review the code and modify it.
 
