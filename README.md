@@ -34,12 +34,17 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 
 También tiene integrado el activador de Windows 10. Actualmente se está trabajando en integrar el activador de Office. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
-Antes de ejecutar el script debe asegurarse de que su pólitica de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando 
+Antes de ejecutar el script debe asegurarse de que su pólitica de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
+
 ```Powershell
 Get-ExecutionPolicy
 ```
 
-Si no es el caso, debe ejecutar el comando ``Set-ExecutionPolicy Unrestricted`` en PowerShell.
+Si el resultado es ``Restricted`` debe ejecutar el comando 
+
+```Powershell
+Set-ExecutionPolicy Unrestricted
+```
 
 Para ejecutar el script, abra una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell muévase hasta la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
 
