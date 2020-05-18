@@ -6,11 +6,11 @@ Este es un proyecto de código abierto sobre activadores para Windows y Office e
 
 ## Office 2019
 
-El script [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) está escrito en bacth y es para activar Office 2019, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
+El script [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) está escrito en batch y es para activar Office 2019, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
 
 ## Office 365
 
-El script [O365.cmd](https://github.com/Audrum/windows_activators/blob/master/O365.cmd) está escrito en bacth y es para activar Office 365, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
+El script [O365.cmd](https://github.com/Audrum/windows_activators/blob/master/O365.cmd) está escrito en batch y es para activar Office 365, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
 
 ## Windows 10
 
