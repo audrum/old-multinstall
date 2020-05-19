@@ -41,7 +41,7 @@ También tiene integrado el activador de Windows 10 y Office 365. La instalació
 Get-ExecutionPolicy
 ```
 
-Si el resultado es ``Restricted`` debe ejecutar el comando: 
+Si el resultado es ``Restricted`` debe ejecutar como **administrador** el comando: 
 
 ```Powershell
 Set-ExecutionPolicy Unrestricted
@@ -96,7 +96,7 @@ Also includes the Windows 10 activator and Office 365 activator ported to PowerS
 Get-ExecutionPolicy
 ```
 
-If the result is ``Restricted`` you have to execute the command:
+If the result is ``Restricted`` you have to execute with **admin rights** the command:
 
 ```Powershell
 Set-ExecutionPolicy Unrestricted
