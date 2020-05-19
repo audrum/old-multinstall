@@ -2,7 +2,7 @@
 
 ## windows_activators
 
-Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**.
+Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
 
 
 ## Windows Multinstall
@@ -57,7 +57,7 @@ También muestra un listado de seriales para cada versión de Windows 10 e inclu
 
 ## windows_activators
 
-This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**.
+This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
 
 ## Windows Multinstall
