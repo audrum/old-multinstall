@@ -14,7 +14,6 @@ function Banner
     Write-Host "|   t.me/audrum    |" -ForegroundColor Green
     Write-Host "====================" -ForegroundColor Green
     Write-Host ""
-    Write-Host "Probado solo en Windows 10" -ForegroundColor Magenta
 }
 
 function ActivateWindows
