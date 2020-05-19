@@ -49,7 +49,7 @@ Set-ExecutionPolicy Unrestricted
 
 Para ejecutar el script, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
 
-![right click](assets/OBAMPu64uG.png?style=centerme)
+![right click](assets/OBAMPu64uG.png)
 
 También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
 
