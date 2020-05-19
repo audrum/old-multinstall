@@ -25,7 +25,7 @@ También muestra un listado de seriales para cada versión de Windows 10 e inclu
 
 ## Windows Multinstall
 
-El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/multinstall.ps1) está escrito en PowerShell para make un poco mas fácil y rápido el proceso post instalación de Windows 10, ayudando a instalar automáticamente software básico como:
+El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/multinstall.ps1) está escrito en PowerShell para hacer un poco mas fácil y rápido el proceso post-instalación de Windows 10, ayudando a instalar automáticamente software básico como:
 
 * Google Chrome
 * Firefox
@@ -81,7 +81,7 @@ Also it can show you a list of serials for each Windows 10 flavor and even use y
 
 ## Windows Multinstall
 
-The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/multinstall.ps1) file is a PowerShell script to make a little bit easier and faster the Windows 10 after installation, helping installing automatically some basic tools such as: 
+The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/multinstall.ps1) file is a PowerShell script to make a little bit easier and faster the Windows 10 post-installation process, helping installing automatically some basic tools such as: 
 
 * Google Chrome
 * Firefox
