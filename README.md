@@ -30,9 +30,9 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 * Google Chrome
 * Firefox
 * 7-zip
-* Optionally Office 365
+* Opcionalmente Office 365
 
-También tiene integrado el activador de Windows 10. Actualmente se está trabajando en integrar el activador de Office. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
+También tiene integrado el activador de Windows 10 y Office 365. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
 Antes de ejecutar el script debe asegurarse de que su pólitica de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
 
@@ -83,7 +83,7 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 * 7-zip
 * Optionally Office 365
 
-Also includes the Windows 10 activator ported to PowerShell. Currently working in porting the Office activator. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
+Also includes the Windows 10 activator and Office 365 activator ported to PowerShell. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
 Before execute the script be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
 
