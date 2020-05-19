@@ -47,7 +47,11 @@ Si el resultado es ``Restricted`` debe ejecutar el comando:
 Set-ExecutionPolicy Unrestricted
 ```
 
-Para ejecutar el script, abra una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
+Para ejecutar el script, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_ automáticamente pedirá permisos para ejecutarse como administrador.
+
+
+
+También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
 
 ---
 # English description
