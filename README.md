@@ -35,7 +35,7 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 
 También tiene integrado el activador de Windows 10 y Office 365. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
-Antes de ejecutar el script debe asegurarse de que su pólitica de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
+**Antes** de ejecutar el script debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
 
 ```Powershell
 Get-ExecutionPolicy
@@ -47,7 +47,7 @@ Si el resultado es ``Restricted`` debe ejecutar el comando:
 Set-ExecutionPolicy Unrestricted
 ```
 
-Para ejecutar el script, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_ automáticamente pedirá permisos para ejecutarse como administrador.
+Para ejecutar el script, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
 
 ![right click](assets/OBAMPu64uG.png)
 
@@ -90,7 +90,7 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 
 Also includes the Windows 10 activator and Office 365 activator ported to PowerShell. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
-Before execute the script be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
+**Before** execute the script be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
 
 ```Powershell
 Get-ExecutionPolicy
@@ -102,5 +102,9 @@ If the result is ``Restricted`` you have to execute the command:
 Set-ExecutionPolicy Unrestricted
 ```
 
-To execute the script, run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\windows_multinstaler.ps1`` and follow the instructions. Feel free to review the code and modify it.
+To execute the script just right click on the script and select the option _Run with PowerShell_, automatically it will ask for admin rights.   
+
+![right click](assets/OBAMPu64uG.png)
+
+Alternatively you can run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\windows_multinstaler.ps1`` and follow the instructions. Feel free to review the code and modify it.
 
