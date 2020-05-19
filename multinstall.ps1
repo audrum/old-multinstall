@@ -184,10 +184,10 @@ function InstallWinRAR
     }
 }
 
-function InstallOffice365
+function InstallOffice
 {
-    $title    = "Instalar Office 365"
-    $question = "¿Descargar e instalar Office 365?"
+    $title    = "Instalar Office"
+    $question = "¿Descargar e instalar Office?"
 
     $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
     $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Si'))
@@ -196,7 +196,7 @@ function InstallOffice365
     $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
     if ($decision -eq 0) 
     {
-        Write-Host "Iniciando descarga e instalación de Office 365..." -ForegroundColor Yellow
+        Write-Host "Iniciando descarga e instalación de Office Pro Plus..." -ForegroundColor Yellow
         cinst office365proplus -y
         Write-Host "Instalación  finalizada" -ForegroundColor Green
         Start-Sleep -s 3
@@ -205,7 +205,7 @@ function InstallOffice365
         
     else 
     {
-        Write-Host "Ha decidido no instalar Office 365" -ForegroundColor Yellow
+        Write-Host "Ha decidido no instalar Office" -ForegroundColor Yellow
         Write-Host ""
         Start-Sleep -s 3
     }
@@ -299,7 +299,7 @@ function ActivateWindows10
 function ActivateOffice
 {
 
-    $title    = "Activar Office 365 o 2019"
+    $title    = "Activar Office"
     $question = "¿Descargar activar Office?"
 
     $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
@@ -320,15 +320,13 @@ function ActivateOffice
             }
             }
 
-            cscript ospp.vbs /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
-            cscript ospp.vbs /unpkey:BTDRB >nul
-            cscript ospp.vbs /unpkey:KHGM9 >nul
-            cscript ospp.vbs /unpkey:CPQVG >nul
-            cscript ospp.vbs /sethst:kms8.msguides.com
             cscript ospp.vbs /setprt:1688
+            cscript ospp.vbs /unpkey:6MWKP >nul
+            cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+            cscript ospp.vbs /sethst:kms8.msguides.com
             cscript ospp.vbs /act
 
-            Write-Host "Office 365 se ha activado satisfactoriamente" -ForegroundColor Green
+            Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
             Write-Host ""
             Start-Sleep -s 3
         }
@@ -344,12 +342,10 @@ function ActivateOffice
             }
             }
 
-            cscript ospp.vbs /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
-            cscript ospp.vbs /unpkey:BTDRB >nul
-            cscript ospp.vbs /unpkey:KHGM9 >nul
-            cscript ospp.vbs /unpkey:CPQVG >nul
-            cscript ospp.vbs /sethst:kms8.msguides.com
             cscript ospp.vbs /setprt:1688
+            cscript ospp.vbs /unpkey:6MWKP >nul
+            cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+            cscript ospp.vbs /sethst:kms8.msguides.com
             cscript ospp.vbs /act
 
             Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
@@ -403,7 +399,7 @@ function menu
             }
 
         '5' {
-                InstallOffice365
+                InstallOffice
             }
 
         '6' {
@@ -411,7 +407,7 @@ function menu
             }
 
         '7' {
-                ActivateOffice365
+                ActivateOffice
             }
 
         '8' {
@@ -452,7 +448,7 @@ InstallGoogleChrome
 InstallFirefox
 Install7-zip
 InstallWinRAR
-InstallOffice365
+InstallOffice
 ActivateWindows10
-ActivateOffice365
+ActivateOffice
 Option
