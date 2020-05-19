@@ -2,15 +2,13 @@
 
 ## windows_activators
 
-Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**
+Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**.
+
 
 ## Office 2019
 
 El script [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) está escrito en batch y es para activar Office 2019, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
 
-## Office 365
-
-El script [O365.cmd](https://github.com/Audrum/windows_activators/blob/master/O365.cmd) está escrito en batch y es para activar Office 365, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
 
 ## Windows 10
 
@@ -31,7 +29,7 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 * Firefox
 * 7-zip
 * WinRAR
-* Opcionalmente Office 365
+* Opcionalmente instala Office
 
 También tiene integrado el activador de Windows 10 y Office 365. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
@@ -58,15 +56,13 @@ También puede abrir una sesión de PowerShell con **privilegios de administrado
 
 ## windows_activators
 
-This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**
+This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**.
+
 
 ## Office 2019
 
 The [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) file is a batch script for activate Office 2019, it was written following some instructions from [msguides.com](https://msguides.com/) with a few modifications. Just open it and let it work. You can review the code and feel free to modify it. 
 
-## Office 365
-
-The [O365.cmd](https://github.com/Audrum/windows_activators/blob/master/O365.cmd) file is a batch script for activate Office 365, it was written following some instructions from [msguides.com](https://msguides.com/) with a few modifications. Just open it and let it work. You can review the code and feel free to modify it. 
 
 ## Windows 10
 
@@ -87,7 +83,7 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 * Firefox
 * 7-zip
 * WinRAR
-* Optionally Office 365
+* Optionally installs Office
 
 Also includes the Windows 10 activator and Office 365 activator ported to PowerShell. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
