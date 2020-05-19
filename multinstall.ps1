@@ -69,7 +69,7 @@ function InstallGoogleChrome
 
 function InstallFirefox
 {
-    if (-not(Test-Path "C:\Program Files\Mozilla Firefox\firefox.exe"))
+    if (-not(Test-Path "$env:ProgramFiles\Mozilla Firefox\firefox.exe"))
     {
         $title    = 'Instalar Firefox'
         $question = 'Firefox no está instalado ¿desea instalarlo?'
@@ -106,7 +106,7 @@ function InstallFirefox
 
 function Install7-zip
 {
-    if (-not(Test-Path "C:\Program Files\7-Zip\7zFM.exe"))
+    if (-not(Test-Path "$env:ProgramFiles\7-Zip\7zFM.exe"))
     {
         $title    = "Instalar 7-zip"
         $question = "7-zip no está instalado ¿desea instalarlo?"
@@ -135,6 +135,42 @@ function Install7-zip
     else
     {
         Write-Host "7-zip ya está instalado, omitiendo instalación" -ForegroundColor Green
+        Write-Host ""
+        Start-Sleep -s 3
+    }
+}
+
+function InstallWinRAR
+{
+    if (-not(Test-Path "$env:ProgramFiles\WinRAR\WinRAR.exe"))
+    {
+        $title    = "Instalar WinRAR"
+        $question = "WinRAR no está instalado ¿desea instalarlo?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Si'))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&No'))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            Write-Host "Instalando WinRAR..." -ForegroundColor Yellow
+            cinst winrar -y
+            Write-Host "WinRAR se ha instalado" -ForegroundColor Green
+            Start-Sleep -s 3
+            Write-Host ""
+        } 
+        else 
+        {
+            Write-Host "Ha decidido no instalar WinRAR" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+
+    else
+    {
+        Write-Host "WinRAR ya está instalado, omitiendo instalación" -ForegroundColor Green
         Write-Host ""
         Start-Sleep -s 3
     }
@@ -331,10 +367,11 @@ function menu
     Write-Host "1. Instalar Google Chrome" -ForegroundColor Yellow
     Write-Host "2. Instalar Firefox" -ForegroundColor Yellow
     Write-Host "3. Instalar 7-zip" -ForegroundColor Yellow
-    Write-Host "4. Instalar Office" -ForegroundColor Yellow
-    Write-Host "5. Activar Windows 10" -ForegroundColor Yellow
-    Write-Host "6. Activar Office" -ForegroundColor Yellow
-    Write-Host "7. Salir" -ForegroundColor Yellow
+    Write-Host "4. Instalar WinRAR" -ForegroundColor Yellow
+    Write-Host "5. Instalar Office" -ForegroundColor Yellow
+    Write-Host "6. Activar Windows 10" -ForegroundColor Yellow
+    Write-Host "7. Activar Office" -ForegroundColor Yellow
+    Write-Host "8. Salir" -ForegroundColor Yellow
     Write-Host ""
 
     [int]$option = Read-Host "Seleccione la opción que desea ejecutar"
@@ -354,18 +391,22 @@ function menu
             }
 
         '4' {
-                InstallOffice365
+                InstallWinRAR
             }
 
         '5' {
-                ActivateWindows10
+                InstallOffice365
             }
 
         '6' {
-                ActivateOffice365
+                ActivateWindows10
             }
 
         '7' {
+                ActivateOffice365
+            }
+
+        '8' {
                 exit
             }
 
