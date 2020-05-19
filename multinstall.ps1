@@ -33,7 +33,7 @@ function ChocoEnvironment
 
 function InstallGoogleChrome
 {
-    if (-not(Get-Item (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe').'(Default)').VersionInfo)
+    if (-not(Test-Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe'))
     {
         $title    = 'Instalar Google Chrome'
         $question = 'Google Chrome no está instalado ¿desea instalarlo?'
@@ -254,6 +254,73 @@ function ActivateWindows10
 
 function ActivateOffice365
 {
+
+    $title    = "Activar Office 365"
+    $question = "¿Descargar activar Office 365?"
+
+    $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+    $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Si'))
+    $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&No'))
+
+    $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+    if ($decision -eq 0) 
+    {
+        if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+        {
+            Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+            Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+            if($_.Name.StartsWith('ProPlusVL_KMS'))
+            {
+                cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+            }
+            }
+
+            cscript ospp.vbs /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
+            cscript ospp.vbs /unpkey:BTDRB >nul
+            cscript ospp.vbs /unpkey:KHGM9 >nul
+            cscript ospp.vbs /unpkey:CPQVG >nul
+            cscript ospp.vbs /sethst:kms8.msguides.com
+            cscript ospp.vbs /setprt:1688
+            cscript ospp.vbs /act
+
+            Write-Host "Office 365 se ha activado satisfactoriamente" -ForegroundColor Green
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+
+        else
+        {
+            Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+            Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+            if($_.Name.StartsWith('ProPlusVL_KMS'))
+            {
+                cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+            }
+            }
+
+            cscript ospp.vbs /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
+            cscript ospp.vbs /unpkey:BTDRB >nul
+            cscript ospp.vbs /unpkey:KHGM9 >nul
+            cscript ospp.vbs /unpkey:CPQVG >nul
+            cscript ospp.vbs /sethst:kms8.msguides.com
+            cscript ospp.vbs /setprt:1688
+            cscript ospp.vbs /act
+
+            Write-Host "Office 365 se ha activado satisfactoriamente" -ForegroundColor Green
+            Write-Host ""
+            Start-Sleep -s 3
+          }
+    } 
+        
+    else 
+    {
+        Write-Host "Ha decidido no instalar Office 365" -ForegroundColor Yellow
+        Write-Host ""
+        Start-Sleep -s 3
+    }
+    
 }
 
 function menu
@@ -337,4 +404,5 @@ InstallFirefox
 Install7-zip
 InstallOffice365
 ActivateWindows10
+ActivateOffice365
 Option
