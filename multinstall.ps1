@@ -296,11 +296,11 @@ function ActivateWindows10
     
 }
 
-function ActivateOffice365
+function ActivateOffice
 {
 
-    $title    = "Activar Office 365"
-    $question = "¿Descargar activar Office 365?"
+    $title    = "Activar Office 365 o 2019"
+    $question = "¿Descargar activar Office?"
 
     $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
     $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Si'))
@@ -314,7 +314,7 @@ function ActivateOffice365
             Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
 
             Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
-            if($_.Name.StartsWith('ProPlusVL_KMS'))
+            if($_.Name.StartsWith('ProPlus2019VL'))
             {
                 cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
             }
@@ -338,7 +338,7 @@ function ActivateOffice365
             Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
 
             Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
-            if($_.Name.StartsWith('ProPlusVL_KMS'))
+            if($_.Name.StartsWith('ProPlus2019VL'))
             {
                 cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
             }
@@ -352,7 +352,7 @@ function ActivateOffice365
             cscript ospp.vbs /setprt:1688
             cscript ospp.vbs /act
 
-            Write-Host "Office 365 se ha activado satisfactoriamente" -ForegroundColor Green
+            Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
             Write-Host ""
             Start-Sleep -s 3
           }
@@ -360,7 +360,7 @@ function ActivateOffice365
         
     else 
     {
-        Write-Host "Ha decidido no instalar Office 365" -ForegroundColor Yellow
+        Write-Host "Ha decidido no activar Office" -ForegroundColor Yellow
         Write-Host ""
         Start-Sleep -s 3
     }
