@@ -43,13 +43,13 @@ El script [O2019.ps1](https://github.com/Audrum/windows_activators/blob/master/O
 
 ## Windows 10
 
-El script [W10.cmd](https://github.com/Audrum/windows_activators/blob/master/W10.cmd) es un archivo en batch que puede activar las siguiente versiones de Windows 10:
+El script [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10.ps1) es un archivo en PowerShell que puede activar las siguiente versiones de Windows 10:
 
 * Windows 10 Home
 * Windows 10 Home Single Language
 * Windows 10 Pro
 
-También muestra un listado de seriales para cada versión de Windows 10 e incluso permite usar su propio serial en caso de tener uno. Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificarlo.
+Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificarlo.
 
 ---
 
@@ -98,10 +98,10 @@ The [O2019.ps1](https://github.com/Audrum/windows_activators/blob/master/O2019.p
 
 ## Windows 10
 
-The [W10.cmd](https://github.com/Audrum/windows_activators/blob/master/W10.cmd) file is a batch script that can activate the following flavors of Windows 10:
+The [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10.ps1) file is a batch script that can activate the following flavors of Windows 10:
 
 * Windows 10 Home
 * Windows 10 Home Single Language
 * Windows 10 Pro
 
-Also it can show you a list of serials for each Windows 10 flavor and even use your own serial if you have one. Just open it and follow the on screen instructions. Feel free to review the code and modify it.
+Just open it and follow the on screen instructions. Feel free to review the code and modify it.
