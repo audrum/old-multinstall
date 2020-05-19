@@ -4,6 +4,24 @@
 
 Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
 
+**Antes** de ejecutar los scripts debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
+
+```Powershell
+Get-ExecutionPolicy
+```
+
+Si el resultado es ``Restricted`` debe ejecutar como **administrador** el comando: 
+
+```Powershell
+Set-ExecutionPolicy Unrestricted
+```
+
+Para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
+
+![right click](assets/OBAMPu64uG.png)
+
+También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
+
 
 ## Windows Multinstall
 
@@ -17,28 +35,10 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 
 También tiene integrado el activador de Windows 10 y Office 365. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
-**Antes** de ejecutar el script debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
-
-```Powershell
-Get-ExecutionPolicy
-```
-
-Si el resultado es ``Restricted`` debe ejecutar como **administrador** el comando: 
-
-```Powershell
-Set-ExecutionPolicy Unrestricted
-```
-
-Para ejecutar el script, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
-
-![right click](assets/OBAMPu64uG.png)
-
-También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\windows_multinstaler.ps1`` y siga las instrucciones. Puede revisar el código y modificarlo.
-
 
 ## Office 2019
 
-El script [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) está escrito en batch y es para activar Office 2019, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
+El script [O2019.ps1](https://github.com/Audrum/windows_activators/blob/master/O2019.ps1) está escrito en PowerShell y es para activar Office 2019, fue escrito siguiendo algunos parámetros de [msguides.com](https://msguides.com/) con algunas modificaciones. Solo se debe ejecutar y dejar que trabaje. Puede revisar el código y modificarlo. 
 
 
 ## Windows 10
@@ -59,6 +59,24 @@ También muestra un listado de seriales para cada versión de Windows 10 e inclu
 
 This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
+**Before** execute the scripts be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
+
+```Powershell
+Get-ExecutionPolicy
+```
+
+If the result is ``Restricted`` you have to execute with **admin rights** the command:
+
+```Powershell
+Set-ExecutionPolicy Unrestricted
+```
+
+To execute the scripts just right click on the script and select the option _Run with PowerShell_, automatically it will ask for admin rights.   
+
+![right click](assets/OBAMPu64uG.png)
+
+Alternatively you can run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\name_script.ps1`` and follow the instructions.
+
 
 ## Windows Multinstall
 
@@ -72,28 +90,10 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 
 Also includes the Windows 10 activator and Office 365 activator ported to PowerShell. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
-**Before** execute the script be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
-
-```Powershell
-Get-ExecutionPolicy
-```
-
-If the result is ``Restricted`` you have to execute with **admin rights** the command:
-
-```Powershell
-Set-ExecutionPolicy Unrestricted
-```
-
-To execute the script just right click on the script and select the option _Run with PowerShell_, automatically it will ask for admin rights.   
-
-![right click](assets/OBAMPu64uG.png)
-
-Alternatively you can run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\windows_multinstaler.ps1`` and follow the instructions. Feel free to review the code and modify it.
-
 
 ## Office 2019
 
-The [O2019.cmd](https://github.com/Audrum/windows_activators/blob/master/O2019.cmd) file is a batch script for activate Office 2019, it was written following some instructions from [msguides.com](https://msguides.com/) with a few modifications. Just open it and let it work. You can review the code and feel free to modify it. 
+The [O2019.ps1](https://github.com/Audrum/windows_activators/blob/master/O2019.ps1) file is a PowerShell script for activate Office 2019, it was written following some instructions from [msguides.com](https://msguides.com/) with a few modifications. Just open it and let it work. You can review the code and feel free to modify it. 
 
 
 ## Windows 10
