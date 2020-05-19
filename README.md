@@ -30,6 +30,7 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 * Google Chrome
 * Firefox
 * 7-zip
+* WinRAR
 * Opcionalmente Office 365
 
 También tiene integrado el activador de Windows 10 y Office 365. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
