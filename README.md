@@ -86,6 +86,7 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 * Google Chrome
 * Firefox
 * 7-zip
+* WinRAR
 * Optionally Office 365
 
 Also includes the Windows 10 activator and Office 365 activator ported to PowerShell. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
