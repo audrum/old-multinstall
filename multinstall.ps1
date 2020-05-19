@@ -443,6 +443,7 @@ ChocoEnvironment
 InstallGoogleChrome
 InstallFirefox
 Install7-zip
+InstallWinRAR
 InstallOffice365
 ActivateWindows10
 ActivateOffice365
