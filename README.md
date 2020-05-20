@@ -33,7 +33,7 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 * WinRAR
 * Opcionalmente instala Office
 
-También tiene integrado el activador de Windows 10 y Office 365. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
+También tiene integrado el activador de Windows 10 y Office. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
 
 ## Office 2019
@@ -88,7 +88,7 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 * WinRAR
 * Optionally installs Office
 
-Also includes the Windows 10 activator and Office 365 activator ported to PowerShell. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
+Also includes the Windows 10 activator and Office activator. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
 
 ## Office 2019
