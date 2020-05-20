@@ -98,7 +98,7 @@ The [O2019.ps1](https://github.com/Audrum/windows_activators/blob/master/O2019.p
 
 ## Windows 10
 
-The [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10.ps1) file is a batch script that can activate the following flavors of Windows 10:
+The [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10.ps1) file is a PowerShell script that can activate the following flavors of Windows 10:
 
 * Windows 10 Home
 * Windows 10 Home Single Language
