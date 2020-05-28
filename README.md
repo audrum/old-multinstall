@@ -4,6 +4,9 @@
 
 Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
 
+
+## Instrucciones
+
 **Antes** de ejecutar los scripts debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
 
 ```Powershell
@@ -66,6 +69,9 @@ Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificar
 ## windows_activators
 
 This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
+
+
+## Instructions
 
 **Before** execute the scripts be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
 
