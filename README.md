@@ -60,7 +60,7 @@ El script [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10
 * Windows 10 Home Single Language
 * Windows 10 Pro
 
-Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificarlo.
+También fue desarrollado siguiendo algunos parámetros de [msguides.com](https://msguides.com). Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificarlo.
 
 ---
 
@@ -126,4 +126,4 @@ The [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10.ps1) 
 * Windows 10 Home Single Language
 * Windows 10 Pro
 
-Just open it and follow the on screen instructions. Feel free to review the code and modify it.
+Also was developed following some instructions from [msguides.com](https://msguides.com). Just open it and follow the on screen instructions. Feel free to review the code and modify it.
