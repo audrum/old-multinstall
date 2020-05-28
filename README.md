@@ -20,7 +20,7 @@ Una vez hecho esto, para ejecutar los scripts, solo debe dar click derecho y sel
 
 ![right click](assets/m9OXmutwkK.png)
 
-También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubíquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
+También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubíquese en la ruta dónde está guardado el script y ejecútelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
 
 ## Descargas
 
