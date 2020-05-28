@@ -16,11 +16,11 @@ Si el resultado es ``Restricted`` debe ejecutar como **administrador** el comand
 Set-ExecutionPolicy Unrestricted
 ```
 
-Para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
+Una vez hecho esto, para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
 
 ![right click](assets/m9OXmutwkK.png)
 
-También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
+También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubíquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
 
 ## Descargas
 
@@ -79,7 +79,7 @@ If the result is ``Restricted`` you have to execute with **admin rights** the co
 Set-ExecutionPolicy Unrestricted
 ```
 
-To execute the scripts just right click on the script and select the option _Run with PowerShell_, automatically it will ask for admin rights.   
+Once done, to execute the scripts just right click on the script and select the option _Run with PowerShell_, automatically it will ask for admin rights.   
 
 ![right click](assets/OBAMPu64uG.png)
 
