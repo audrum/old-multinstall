@@ -701,7 +701,7 @@ function ActivateOffice
     else {
 
         $title    = "Activate Office"
-        $question = "DO you want to activate Office?"
+        $question = "Do you want to activate Office?"
 
         $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
         $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
