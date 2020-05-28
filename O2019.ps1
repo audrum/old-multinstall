@@ -8,61 +8,163 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 function Banner
 {
-    Write-Host "====================" -ForegroundColor Green
-    Write-Host "|    Creado por    |" -ForegroundColor Green
-    Write-Host "|      A. B.       |" -ForegroundColor Green
-    Write-Host "|   t.me/audrum    |" -ForegroundColor Green
-    Write-Host "====================" -ForegroundColor Green
-    Write-Host ""
+    $lang = (Get-WinUserLanguageList).LanguageTag
+    if ($lang -like "es*")
+    {
+        Write-Host "====================" -ForegroundColor Green
+        Write-Host "|    Creado por    |" -ForegroundColor Green
+        Write-Host "|      A. B.       |" -ForegroundColor Green
+        Write-Host "|   t.me/audrum    |" -ForegroundColor Green
+        Write-Host "====================" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "Probado solo en Windows 10" -ForegroundColor Magenta    
+    }
+
+    else {
+
+        Write-Host "====================" -ForegroundColor Green
+        Write-Host "|    Created by    |" -ForegroundColor Green
+        Write-Host "|      A. B.       |" -ForegroundColor Green
+        Write-Host "|   t.me/audrum    |" -ForegroundColor Green
+        Write-Host "====================" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "Tested only in Windows 10" -ForegroundColor Magenta
+    }  
 }
 
 function ActivateOffice
 {
-    Write-Host "Activando Office..." -ForegroundColor Green
-    Start-Sleep -s 3
-    if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+    $lang = (Get-WinUserLanguageList).LanguageTag
+    
+    if ($lang -like "es*")
     {
-        Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+        $title    = "Activar Office"
+        $question = "¿Desea activar Office?"
 
-        Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
-        if($_.Name.StartsWith('ProPlus2019VL'))
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Si"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
         {
-            cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
-        }
-        }
+            if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+            {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
 
-        cscript ospp.vbs /setprt:1688
-        cscript ospp.vbs /unpkey:6MWKP >nul
-        cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
-        cscript ospp.vbs /sethst:kms8.msguides.com
-        cscript ospp.vbs /act
+                Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+                if($_.Name.StartsWith('ProPlus2019VL'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
 
-        Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
-        Write-Host ""
-        Start-Sleep -s 3
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6MWKP >nul
+                cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /act
+
+                Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+            else
+            {
+                Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('ProPlus2019VL'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6MWKP >nul
+                cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /act
+
+                Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
+        } 
+
+        else 
+        {
+            Write-Host "Ha decidido no activar Office" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
     }
 
-    else
-    {
-        Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+    else {
 
-        Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
-        if($_.Name.StartsWith('ProPlus2019VL'))
+        $title    = "Activate Office"
+        $question = "DO you want to activate Office?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
         {
-            cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
-        }
-        }
+            if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+            {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
 
-        cscript ospp.vbs /setprt:1688
-        cscript ospp.vbs /unpkey:6MWKP >nul
-        cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
-        cscript ospp.vbs /sethst:kms8.msguides.com
-        cscript ospp.vbs /act
+                Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+                if($_.Name.StartsWith('ProPlus2019VL'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
 
-        Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
-        Write-Host ""
-        Start-Sleep -s 3
-    }
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6MWKP >nul
+                cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /act
+
+                Write-Host "Office has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+            else
+            {
+                Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('ProPlus2019VL'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6MWKP >nul
+                cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /act
+
+                Write-Host "Office has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
+        } 
+
+        else 
+        {
+            Write-Host "You have chosen no to activate Office" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }   
 }
 
 Banner
