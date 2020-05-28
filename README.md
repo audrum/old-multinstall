@@ -18,7 +18,7 @@ Set-ExecutionPolicy Unrestricted
 
 Para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
 
-![right click](assets/OBAMPu64uG.png)
+![right click](assets/m9OXmutwkK.png)
 
 También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
 
