@@ -22,6 +22,14 @@ Para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción 
 
 También puede abrir una sesión de PowerShell con **privilegios de administrador**, dentro de la sesión de PoweShell ubiquese en la ruta dónde está guardado el script y ejecutelo con el comando ``.\nombre_script.ps1`` y siga las instrucciones.
 
+## Descargas
+
+Las descargas se encuentran en la sección de [__Releases__](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
+
+* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.1/multinstall.ps1)
+* [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
+* [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
+
 
 ## Windows Multinstall
 
@@ -76,6 +84,14 @@ To execute the scripts just right click on the script and select the option _Run
 ![right click](assets/OBAMPu64uG.png)
 
 Alternatively you can run a PowerShell terminal with admin rights, move to the path where is downloaded the script and execute the script with the command ``.\name_script.ps1`` and follow the instructions.
+
+## Downloads
+
+You can download the files from the [__Releases__](https://github.com/Audrum/windows_activators/releases) section or select the file below:
+
+* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.1/multinstall.ps1)
+* [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
+* [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
 
 
 ## Windows Multinstall
