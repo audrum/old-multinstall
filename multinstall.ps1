@@ -59,7 +59,7 @@ function ChocoEnvironment
 
     else {
 
-        Write-Host "Cheking environment..." -ForegroundColor Yellow
+        Write-Host "Checking environment..." -ForegroundColor Yellow
     
         $testchoco = choco -v
 
