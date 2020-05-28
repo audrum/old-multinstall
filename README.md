@@ -24,9 +24,9 @@ También puede abrir una sesión de PowerShell con **privilegios de administrado
 
 ## Descargas
 
-Las descargas se encuentran en la sección de [__Releases__](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
+Las descargas se encuentran en la sección de [_Releases_](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
 
-* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.1/multinstall.ps1)
+* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/multinstall-v0.1/multinstall.ps1)
 * [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
 * [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
 
@@ -87,9 +87,9 @@ Alternatively you can run a PowerShell terminal with admin rights, move to the p
 
 ## Downloads
 
-You can download the files from the [__Releases__](https://github.com/Audrum/windows_activators/releases) section or select the file below:
+You can download the files from the [_Releases_](https://github.com/Audrum/windows_activators/releases) section or select the file below:
 
-* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.1/multinstall.ps1)
+* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/multinstall-v0.1/multinstall.ps1)
 * [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
 * [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
 
