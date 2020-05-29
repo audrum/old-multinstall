@@ -8,7 +8,7 @@
 
 function Banner
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     if ($lang -like "es*")
     {
         Write-Host "====================" -ForegroundColor Green
@@ -34,7 +34,7 @@ function Banner
 
 function ChocoEnvironment
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -83,7 +83,7 @@ function ChocoEnvironment
 
 function InstallGoogleChrome
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -163,7 +163,7 @@ function InstallGoogleChrome
 
 function InstallFirefox
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -244,7 +244,7 @@ function InstallFirefox
 
 function Install7-zip
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -324,7 +324,7 @@ function Install7-zip
 
 function InstallWinRAR
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -402,7 +402,7 @@ function InstallWinRAR
 
 function InstallOffice
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -462,7 +462,7 @@ function InstallOffice
 
 function ActivateWindows10
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -631,7 +631,7 @@ function ActivateWindows10
 
 function ActivateOffice
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -766,7 +766,7 @@ function ActivateOffice
 
 function menu
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
@@ -877,7 +877,7 @@ function menu
 
 function Option
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {

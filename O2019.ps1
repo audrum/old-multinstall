@@ -8,7 +8,7 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 function Banner
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     if ($lang -like "es*")
     {
         Write-Host "====================" -ForegroundColor Green
@@ -34,7 +34,7 @@ function Banner
 
 function ActivateOffice
 {
-    $lang = (Get-WinUserLanguageList).LanguageTag
+    $lang = ([CultureInfo]::InstalledUICulture).Name
     
     if ($lang -like "es*")
     {
