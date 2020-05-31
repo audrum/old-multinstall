@@ -2,7 +2,7 @@
 
 ## windows_activators
 
-Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en batch y PowerShell. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
+Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en PowerShell. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
 
 
 ## Instrucciones
@@ -19,7 +19,7 @@ Si el resultado es ``Restricted`` debe ejecutar como **administrador** el comand
 Set-ExecutionPolicy Unrestricted
 ```
 
-Al ejecutar este comando, se le pedirá confirmación, puede seleccionar la opción _Si_ o _Si a todo_. Una vez hecho esto, para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
+Al ejecutar este comando, se le pedirá confirmación, puede seleccionar la opción _Sí_ o _Sí a todo_. Una vez hecho esto, para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
 
 ![right click](assets/m9OXmutwkK.png)
 
@@ -68,7 +68,7 @@ También fue desarrollado siguiendo algunos parámetros de [msguides.com](https:
 
 ## windows_activators
 
-This is a project about open source activators for windows and office written in batch and powershell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
+This is a project about open source activators for windows and office written in PowerShell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
 
 ## Instructions
