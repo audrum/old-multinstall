@@ -500,6 +500,7 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Home Single Language ahora está activado!" -ForegroundColor Green
                     Start-Sleep -s 5
+                    break
                 }
 
                 'Microsoft Windows 10 Home'
@@ -517,6 +518,7 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Home ahora está activado!" -ForegroundColor Green
                     Start-Sleep -s 5
+                    break
                 }
 
                 'Microsoft Windows 10 Pro'
@@ -534,6 +536,13 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Pro ahora está activado!" -ForegroundColor Green
                     Start-Sleep -s 5
+                    break
+                }
+
+                default
+                {
+                    Write-Host "Este activador solo funciona en Windows 10"
+                    break
                 }
             }
         } 
@@ -582,6 +591,7 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Home Single Language is now activated!" -ForegroundColor Green
                     Start-Sleep -s 5
+                    break
                 }
 
                 'Microsoft Windows 10 Home'
@@ -599,6 +609,7 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Home is now activated!" -ForegroundColor Green
                     Start-Sleep -s 5
+                    break
                 }
 
                 'Microsoft Windows 10 Pro'
@@ -616,6 +627,13 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Pro is now activated!" -ForegroundColor Green
                     Start-Sleep -s 5
+                    break
+                }
+
+                default
+                {
+                    Write-Host "This acvtivator only works on Windows 10"
+                    break
                 }
             }
         } 
@@ -788,36 +806,41 @@ function menu
         switch ($option)
         {
             '1' {
-                    InstallGoogleChrome
+                    InstallGoogleChrome; break
                 }
 
             '2' {
-                    InstallFirefox
+                    InstallFirefox; break
                 }
 
             '3' {
-                    Install7-zip
+                    Install7-zip; break
                 }
 
             '4' {
-                    InstallWinRAR
+                    InstallWinRAR; break
                 }
 
             '5' {
-                    InstallOffice
+                    InstallOffice; break
                 }
 
             '6' {
-                    ActivateWindows10
+                    ActivateWindows10; break
                 }
 
             '7' {
-                    ActivateOffice
+                    ActivateOffice; break
                 }
 
             '8' {
                     exit
                 }
+
+            default
+            {
+                Write-Host "Opcion no valida"; menu
+            }
         }
     }
 
@@ -841,36 +864,41 @@ function menu
         switch ($option)
         {
             '1' {
-                    InstallGoogleChrome
+                    InstallGoogleChrome; break
                 }
 
             '2' {
-                    InstallFirefox
+                    InstallFirefox; break
                 }
 
             '3' {
-                    Install7-zip
+                    Install7-zip; break
                 }
 
             '4' {
-                    InstallWinRAR
+                    InstallWinRAR; break
                 }
 
             '5' {
-                    InstallOffice
+                    InstallOffice; break
                 }
 
             '6' {
-                    ActivateWindows10
+                    ActivateWindows10; break
                 }
 
             '7' {
-                    ActivateOffice
+                    ActivateOffice; break
                 }
 
             '8' {
                     exit
                 }
+
+            default
+            {
+                Write-Host "Option not valid"; menu
+            }
         }
     }
 }
