@@ -77,7 +77,11 @@ This is a project about open source activators for windows and office written in
 
 ## Instructions
 
-**Before** execute the scripts be sure that your Execution Policy allows run PowerShell scripts. You can check this using the command:
+**Before** execute the scripts be sure that your Execution Policy allows run PowerShell scripts. You can check it out first opening PowerShell as administrator:
+
+![PSAdmin](assets/JkUJ8f79I1.png)
+
+Once PowerShell is opne use the command:
 
 ```Powershell
 Get-ExecutionPolicy
