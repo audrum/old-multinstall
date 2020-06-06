@@ -7,19 +7,23 @@ Este es un proyecto de código abierto sobre activadores para Windows y Office e
 
 ## Instrucciones
 
-**Antes** de ejecutar los scripts debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para saber si lo permite ejecute en PowerShell el comando:
+**Antes** de ejecutar los scripts debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para comprobarlo primero abra PowerShell como administrador:
+
+![PSAdmin](assets/PSAdminES.png)
+
+Ahora esciba el comando:
 
 ```Powershell
 Get-ExecutionPolicy
 ```
 
-Si el resultado es ``Restricted`` debe ejecutar como **administrador** el comando: 
+Si el resultado es ``Restricted`` debe ejecutar en PowerShell como **administrador** el comando: 
 
 ```Powershell
 Set-ExecutionPolicy Unrestricted
 ```
 
-Al ejecutar este comando, se le pedirá confirmación, puede seleccionar la opción _Sí_ o _Sí a todo_. Una vez hecho esto, para ejecutar los scripts, solo debe dar click derecho y seleccionar la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
+Al ejecutar este comando, se le pedirá confirmación, puede seleccionar la opción _[S] Sí_ o _[O] Sí a todo_. Una vez hecho esto, podrá ejecutar los scripts tan solo dando click derecho y selecciona la opción _Ejecutar con PowerShell_, automáticamente pedirá permisos para ejecutarse como administrador.
 
 ![right click](assets/m9OXmutwkK.png)
 
