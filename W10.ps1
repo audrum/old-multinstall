@@ -107,6 +107,30 @@ function ActivateWindows10
                     Write-Host "Windows 10 Pro ahora está activado!" -ForegroundColor Green
                     Start-Sleep -s 5
                 }
+
+                'Microsoft Windows 10 Pro N'
+                {
+                    Write-Host "Instalando licencia..." -ForegroundColor Yellow
+                    slmgr /ipk MH37W-N47XK-V7XM9-C7227-GCQG9
+                    Start-Sleep -s 2
+                    Write-Host "Licencia instalada" -ForegroundColor Green
+                    Write-Host "Conectando con el servidor de activación..." -ForegroundColor Yellow
+                    slmgr /skms kms8.msguides.com
+                    Start-Sleep -s 2
+                    Write-Host "Conexion realizada" -ForegroundColor Green 
+                    Write-Host "Activando" $windows -ForegroundColor Yellow
+                    slmgr /ato
+                    Start-Sleep -s 2
+                    Write-Host "Windows 10 Pro N ahora está activado!" -ForegroundColor Green
+                    Start-Sleep -s 5
+                    break
+                }
+
+                default
+                {
+                    Write-Host "Este activador solo funciona en Windows 10"
+                    break
+                }
             }
         } 
 
@@ -188,6 +212,30 @@ function ActivateWindows10
                     Start-Sleep -s 2
                     Write-Host "Windows 10 Pro is now activated!" -ForegroundColor Green
                     Start-Sleep -s 5
+                }
+
+                'Microsoft Windows 10 Pro N'
+                {
+                    Write-Host "Installing license key..." -ForegroundColor Yellow
+                    slmgr /ipk MH37W-N47XK-V7XM9-C7227-GCQG9
+                    Start-Sleep -s 2
+                    Write-Host "License key installed" -ForegroundColor Green
+                    Write-Host "Conecting with activation server..." -ForegroundColor Yellow
+                    slmgr /skms kms8.msguides.com
+                    Start-Sleep -s 2
+                    Write-Host "Conection successful" -ForegroundColor Green 
+                    Write-Host "Activating" $windows -ForegroundColor Yellow
+                    slmgr /ato
+                    Start-Sleep -s 2
+                    Write-Host "Windows 10 Pro N is now activated!" -ForegroundColor Green
+                    Start-Sleep -s 5
+                    break
+                }                
+
+                default
+                {
+                    Write-Host "This acvtivator only works on Windows 10"
+                    break
                 }
             }
         } 
