@@ -67,7 +67,7 @@ function ActivateOffice
 
                 Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
                 Write-Host ""
-                Start-Sleep -s 3
+                Start-Sleep -s 10
             }
 
             else
@@ -89,7 +89,7 @@ function ActivateOffice
 
                 Write-Host "Office se ha activado satisfactoriamente" -ForegroundColor Green
                 Write-Host ""
-                Start-Sleep -s 3
+                Start-Sleep -s 10
               }
         } 
 
@@ -97,7 +97,7 @@ function ActivateOffice
         {
             Write-Host "Ha decidido no activar Office" -ForegroundColor Yellow
             Write-Host ""
-            Start-Sleep -s 3
+            Start-Sleep -s 10
         }
     }
 
@@ -132,7 +132,7 @@ function ActivateOffice
 
                 Write-Host "Office has been activated successfully" -ForegroundColor Green
                 Write-Host ""
-                Start-Sleep -s 3
+                Start-Sleep -s 10
             }
 
             else
@@ -154,7 +154,7 @@ function ActivateOffice
 
                 Write-Host "Office has been activated successfully" -ForegroundColor Green
                 Write-Host ""
-                Start-Sleep -s 3
+                Start-Sleep -s 10
               }
         } 
 
@@ -162,7 +162,7 @@ function ActivateOffice
         {
             Write-Host "You have chosen no to activate Office" -ForegroundColor Yellow
             Write-Host ""
-            Start-Sleep -s 3
+            Start-Sleep -s 10
         }
     }   
 }
