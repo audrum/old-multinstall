@@ -1561,8 +1561,12 @@ InstallGoogleChrome
 InstallFirefox
 Install7-zip
 InstallWinRAR
+InstallPDF24
 InstallOffice
 InstallProject
+InstallVisio
 ActivateWindows10
 ActivateOffice
+ActivateProject
+ActivateVisio
 Option
