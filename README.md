@@ -121,6 +121,7 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 * WinRAR
 * PDF24
 * Optionally installs and activate Microsoft Office, Project and Visio
+* Activate all Windows 10 versions
 
 The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
