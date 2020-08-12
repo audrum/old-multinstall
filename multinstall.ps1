@@ -400,6 +400,84 @@ function InstallWinRAR
     
 }
 
+function InstallPDF24
+{
+    $lang = ([CultureInfo]::InstalledUICulture).Name
+    
+    if ($lang -like "es*")
+    {
+        if (-not(Test-Path "$env:ProgramFiles\PDF24\pdf24.exe"))
+        {
+            $title    = "Instalar PDF24"
+            $question = "No tiene un visor PDF instalado ¿desea instalarlo?"
+
+            $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+            $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Si"))
+            $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+            $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+            if ($decision -eq 0) 
+            {
+                Write-Host "Instalando PDF24..." -ForegroundColor Yellow
+                cinst pdf24 -y
+                Write-Host "PDF24 se ha instalado" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            } 
+            else 
+            {
+                Write-Host "Ha decidido no instalar PDF24" -ForegroundColor Yellow
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+        }
+
+        else
+        {
+            Write-Host "PDF24 ya está instalado, omitiendo instalación" -ForegroundColor Green
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+
+    else {
+
+        if (-not(Test-Path "$env:ProgramFiles\PDF24\pdf24.exe"))
+        {
+            $title    = "Install PDF24"
+            $question = "PDF24 is not installed, install?"
+
+            $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+            $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
+            $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+            $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+            if ($decision -eq 0) 
+            {
+                Write-Host "Installing PDF24..." -ForegroundColor Yellow
+                cinst pdf24 -y
+                Write-Host "PDF24 has been installed" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            } 
+            else 
+            {
+                Write-Host "You have chosen not to install PDF24" -ForegroundColor Yellow
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+        }
+
+        else
+        {
+            Write-Host "PDF24 is already installed, omiting installation" -ForegroundColor Green
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+    
+}
+
 function InstallOffice
 {
     $lang = ([CultureInfo]::InstalledUICulture).Name
@@ -453,6 +531,178 @@ function InstallOffice
         else 
         {
             Write-Host "You have chosen no to install Office" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+    
+}
+
+function InstallProject
+{
+    $lang = ([CultureInfo]::InstalledUICulture).Name
+    
+    if ($lang -like "es*")
+    {
+        $title    = "Instalar Microsoft Project"
+        $question = "¿Descargar e instalar Microsoft Project 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Si"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            $arch = [System.Environment]::Is64BitOperatingSystem
+
+            if ($arch -like "True")
+            {
+                Write-Host "Iniciando descarga e instalación de Microsoft Project 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/64bit /Product:ProjectPro2019Volume'" --force -y
+                Write-Host "Instalación  finalizada" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+
+            else {
+                Write-Host "Iniciando descarga e instalación de Microsoft Project 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/Product:ProjectPro2019Volume'" --force -y
+                Write-Host "Instalación  finalizada" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+        } 
+
+        else 
+        {
+            Write-Host "Ha decidido no instalar Microsoft Project 2019" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+
+    else {
+
+        $title    = "Install Microsoft Project"
+        $question = "Download and install Microsoft Project 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            $arch = [System.Environment]::Is64BitOperatingSystem
+
+            if ($arch -like "True")
+            {
+                Write-Host "Downloading and installing Microsoft Project 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/64bit /Product:ProjectPro2019Volume'" --force -y
+                Write-Host "Installation completed" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+
+            else {
+                Write-Host "Downloading and installing Microsoft Project 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/Product:ProjectPro2019Volume'" --force -y
+                Write-Host "Installation completed" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+        } 
+
+        else 
+        {
+            Write-Host "You have chosen no to install Microsoft Project 2019" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+    
+}
+
+function InstallVisio
+{
+    $lang = ([CultureInfo]::InstalledUICulture).Name
+    
+    if ($lang -like "es*")
+    {
+        $title    = "Instalar Microsoft Visio"
+        $question = "¿Descargar e instalar Microsoft Visio 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Si"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            $arch = [System.Environment]::Is64BitOperatingSystem
+
+            if ($arch -like "True")
+            {
+                Write-Host "Iniciando descarga e instalación de Microsoft Visio 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/64bit /Product:VisioPro2019Volume'" --force -y
+                Write-Host "Instalación  finalizada" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+
+            else {
+                Write-Host "Iniciando descarga e instalación de Microsoft Visio 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/Product:VisioPro2019Volume'" --force -y
+                Write-Host "Instalación  finalizada" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+        } 
+
+        else 
+        {
+            Write-Host "Ha decidido no instalar Microsoft Visio 2019" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+
+    else {
+
+        $title    = "Install Microsoft Visio"
+        $question = "Download and install Microsoft Visio 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            $arch = [System.Environment]::Is64BitOperatingSystem
+
+            if ($arch -like "True")
+            {
+                Write-Host "Downloading and installing Microsoft Visio 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/64bit /Product:VisioPro2019Volume'" --force -y
+                Write-Host "Installation completed" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+
+            else {
+                Write-Host "Downloading and installing Microsoft Visio 2019..." -ForegroundColor Yellow
+                cinst microsoft-office-deployment --params="'/Product:VisioPro2019Volume'" --force -y
+                Write-Host "Installation completed" -ForegroundColor Green
+                Start-Sleep -s 3
+                Write-Host ""
+            }
+        } 
+
+        else 
+        {
+            Write-Host "You have chosen no to install Microsoft Visio 2019" -ForegroundColor Yellow
             Write-Host ""
             Start-Sleep -s 3
         }
@@ -818,6 +1068,268 @@ function ActivateOffice
     }   
 }
 
+function ActivateProject
+{
+    $lang = ([CultureInfo]::InstalledUICulture).Name
+    
+    if ($lang -like "es*")
+    {
+        $title    = "Activar Microsoft Project"
+        $question = "¿Desea activar Microsoft Project 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Si"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+            {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+                if($_.Name.StartsWith('ProjectPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Project 2019 se ha activado satisfactoriamente" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+            else
+            {
+                Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('ProjectPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Project 2019 se ha activado satisfactoriamente" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
+        } 
+
+        else 
+        {
+            Write-Host "Ha decidido no activar Microsoft Project 2019" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+
+    else {
+
+        $title    = "Activate Microsoft Project"
+        $question = "Do you want to activate Microsoft Project 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+            {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+                if($_.Name.StartsWith('ProjectPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Project 2019 has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+            else
+            {
+                Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('ProjectPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Project 2019 has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
+        } 
+
+        else 
+        {
+            Write-Host "You have chosen no to activate Microsoft Project" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }   
+}
+
+function ActivateVisio
+{
+    $lang = ([CultureInfo]::InstalledUICulture).Name
+    
+    if ($lang -like "es*")
+    {
+        $title    = "Activar Microsoft Visio"
+        $question = "¿Desea activar Microsoft Visio 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Si"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+            {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+                if($_.Name.StartsWith('VisioPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:9BGNQ-K37YR-RQHF2-38RQ3-7VCBB
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Visio 2019 se ha activado satisfactoriamente" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+            else
+            {
+                Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('VisioPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:9BGNQ-K37YR-RQHF2-38RQ3-7VCBB
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Visio 2019 se ha activado satisfactoriamente" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
+        } 
+
+        else 
+        {
+            Write-Host "Ha decidido no activar Microsoft Visio 2019" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }
+
+    else {
+
+        $title    = "Activate Microsoft Visio"
+        $question = "Do you want to activate Microsoft Visio 2019?"
+
+        $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&Yes"))
+        $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList "&No"))
+
+        $decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+        if ($decision -eq 0) 
+        {
+            if(Test-Path "$env:ProgramFiles\Microsoft Office\Office16")
+            {
+                Set-Location "$env:ProgramFiles\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles\Microsoft Office\root\Licenses16\" | Foreach-Object {
+                if($_.Name.StartsWith('VisioPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:9BGNQ-K37YR-RQHF2-38RQ3-7VCBB
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Visio 2019 has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+            else
+            {
+                Set-Location "$env:ProgramFiles(x86)\Microsoft Office\Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)\Microsoft Office\root\Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('VisioPro2019VL_KMS'))
+                {
+                    cscript ospp.vbs /inslic:"..\root\Licenses16\$_"
+                }
+                }
+
+                cscript ospp.vbs /inpkey:9BGNQ-K37YR-RQHF2-38RQ3-7VCBB
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /act
+
+                Write-Host "Microsoft Visio 2019 has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
+        } 
+
+        else 
+        {
+            Write-Host "You have chosen no to activate Microsoft Visio" -ForegroundColor Yellow
+            Write-Host ""
+            Start-Sleep -s 3
+        }
+    }   
+}
+
 function menu
 {
     $lang = ([CultureInfo]::InstalledUICulture).Name
@@ -831,10 +1343,15 @@ function menu
         Write-Host "2. Instalar Firefox" -ForegroundColor Yellow
         Write-Host "3. Instalar 7-zip" -ForegroundColor Yellow
         Write-Host "4. Instalar WinRAR" -ForegroundColor Yellow
-        Write-Host "5. Instalar Office" -ForegroundColor Yellow
-        Write-Host "6. Activar Windows 10" -ForegroundColor Yellow
-        Write-Host "7. Activar Office" -ForegroundColor Yellow
-        Write-Host "8. Salir" -ForegroundColor Yellow
+        Write-Host "5. Instalar lector PDF" -ForegroundColor Yellow
+        Write-Host "6. Instalar Office" -ForegroundColor Yellow
+        Write-Host "7. Instala Microsoft Project 2019" -ForegroundColor Yellow
+        Write-Host "8. Instalar Microsoft Visio 2019" -ForegroundColor
+        Write-Host "9. Activar Windows 10" -ForegroundColor Yellow
+        Write-Host "10. Activar Office" -ForegroundColor Yellow
+        Write-Host "11. Activar Microsoft Project 2019" -ForegroundColor Yellow
+        Write-Host "12. Activar Microsoft Visio 2019" -ForegroundColor Yellow
+        Write-Host "13. Salir" -ForegroundColor Yellow
         Write-Host ""
 
         [int]$option = Read-Host "Seleccione la opción que desea ejecutar"
@@ -856,26 +1373,46 @@ function menu
             '4' {
                     InstallWinRAR; break
                 }
-
+            
             '5' {
-                    InstallOffice; break
+                    InstallPDF24; break
                 }
 
             '6' {
-                    ActivateWindows10; break
+                    InstallOffice; break
                 }
 
             '7' {
-                    ActivateOffice; break
+                    InstallProject; break
                 }
 
             '8' {
+                    InstallVisio; break
+                }
+
+            '9' {
+                    ActivateWindows10; break
+                }
+
+            '10' {
+                    ActivateOffice; break
+                }
+
+            '11' {
+                    ActivateProject; break
+                }
+
+            '12' {
+                    ActivateVisio; break
+                }
+
+            '13' {
                     exit
                 }
 
             default
             {
-                Write-Host "Opcion no valida"; menu
+                Write-Host "Option not valid"; menu
             }
         }
     }
@@ -889,10 +1426,15 @@ function menu
         Write-Host "2. Install Firefox" -ForegroundColor Yellow
         Write-Host "3. Install 7-zip" -ForegroundColor Yellow
         Write-Host "4. Install WinRAR" -ForegroundColor Yellow
-        Write-Host "5. Install Office" -ForegroundColor Yellow
-        Write-Host "6. Activate Windows 10" -ForegroundColor Yellow
-        Write-Host "7. Activate Office" -ForegroundColor Yellow
-        Write-Host "8. Exit" -ForegroundColor Yellow
+        Write-Host "5. Install PDF Reader" -ForegroundColor Yellow
+        Write-Host "6. Install Office" -ForegroundColor Yellow
+        Write-Host "7. Install Microsoft Project 2019" -ForegroundColor Yellow
+        Write-Host "8. Install Microsoft Visio 2019" -ForegroundColor Yellow
+        Write-Host "9. Activate Windows 10" -ForegroundColor Yellow
+        Write-Host "10. Activate Office" -ForegroundColor Yellow
+        Write-Host "11. Activate Microsoft Project 2019" -ForegroundColor Yellow
+        Write-Host "12. Activate Microsoft Visio 2019" -ForegroundColor Yellow
+        Write-Host "13. Exit" -ForegroundColor Yellow
         Write-Host ""
 
         [int]$option = Read-Host "Choose an option"
@@ -914,20 +1456,40 @@ function menu
             '4' {
                     InstallWinRAR; break
                 }
-
+            
             '5' {
-                    InstallOffice; break
+                    InstallPDF24; break
                 }
 
             '6' {
-                    ActivateWindows10; break
+                    InstallOffice; break
                 }
 
             '7' {
-                    ActivateOffice; break
+                    InstallProject; break
                 }
 
             '8' {
+                    InstallVisio; break
+                }
+
+            '9' {
+                    ActivateWindows10; break
+                }
+
+            '10' {
+                    ActivateOffice; break
+                }
+
+            '11' {
+                    ActivateProject; break
+                }
+
+            '12' {
+                    ActivateVisio; break
+                }
+
+            '13' {
                     exit
                 }
 
@@ -1000,6 +1562,7 @@ InstallFirefox
 Install7-zip
 InstallWinRAR
 InstallOffice
+InstallProject
 ActivateWindows10
 ActivateOffice
 Option
