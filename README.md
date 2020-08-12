@@ -46,9 +46,11 @@ El script [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/ma
 * Firefox
 * 7-zip
 * WinRAR
-* Opcionalmente instala Office
+* PDF24
+* Opcionalmente instala y activa Microsoft Office, Project y Visio
+* Activa todas las versiones de Windows 10
 
-También tiene integrado el activador de Windows 10 y Office. La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
+La instalación del software se realiza instalando e invocando [Chocolatey](https://chocolatey.org/).
 
 
 ## Office 2019
@@ -63,6 +65,7 @@ El script [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10
 * Windows 10 Home
 * Windows 10 Home Single Language
 * Windows 10 Pro
+* Windows 10 Pro N
 
 También fue desarrollado siguiendo algunos parámetros de [msguides.com](https://msguides.com). Solo es abrirlo y seguir las instrucciones. Puede revisar el código y modificarlo.
 
@@ -116,9 +119,10 @@ The [multinstall.ps1](https://github.com/Audrum/windows_activators/blob/master/m
 * Firefox
 * 7-zip
 * WinRAR
-* Optionally installs Office
+* PDF24
+* Optionally installs and activate Microsoft Office, Project and Visio
 
-Also includes the Windows 10 activator and Office activator. The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
+The installing of those programs is made installing and invoking [Chocolatey](https://chocolatey.org/).
 
 
 ## Office 2019
@@ -133,5 +137,6 @@ The [W10.ps1](https://github.com/Audrum/windows_activators/blob/master/W10.ps1) 
 * Windows 10 Home
 * Windows 10 Home Single Language
 * Windows 10 Pro
+* Windows 10 Pro N
 
 Also was developed following some instructions from [msguides.com](https://msguides.com). Just open it and follow the on screen instructions. Feel free to review the code and modify it.
