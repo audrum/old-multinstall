@@ -33,7 +33,7 @@ También puede abrir una sesión de PowerShell con **privilegios de administrado
 
 Las descargas se encuentran en la sección de [_Releases_](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
 
-* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/multinstall-v0.1/multinstall.ps1)
+* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.2/multinstall.ps1)
 * [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
 * [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
 
