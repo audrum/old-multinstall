@@ -106,7 +106,7 @@ Alternatively you can run a PowerShell terminal with admin rights, move to the p
 
 You can download the files from the [_Releases_](https://github.com/Audrum/windows_activators/releases) section or select the file below:
 
-* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/multinstall-v0.1/multinstall.ps1)
+* [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.2/multinstall.ps1)
 * [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
 * [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
 
