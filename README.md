@@ -1,18 +1,18 @@
 # Index
-* [Español](https://github.com/Audrum/windows_activators#descripci%C3%B3n-en-espa%C3%B1ol)
+* [Español](https://github.com/Audrum/windows_activators#espa%C3%B1ol)
     * [Descripción](https://github.com/Audrum/windows_activators#descripci%C3%B3n)
-    * [Instrucciones de uso para el script en PowerShell]()
-    * [Descargas]()
-    * [Windows Multinstall]()
-    * [Office 2019]()
-    * [Windows 10]()
+    * [Instrucciones de uso para el script en PowerShell](https://github.com/Audrum/windows_activators#instrucciones-de-uso-para-el-script-en-powershell)
+    * [Descargas](https://github.com/Audrum/windows_activators#descargas)
+    * [Windows Multinstall](https://github.com/Audrum/windows_activators#windows-multinstall)
+    * [Office 2019](https://github.com/Audrum/windows_activators#office-2019)
+    * [Windows 10](https://github.com/Audrum/windows_activators#windows-10)
 
-* [English]()
-    * [How to use PowerShell script]()
-    * [Downloads]()
-    * [Windows Multinstall]()
-    * [Office 2019]()
-    * [Windows 10]()
+* [English](https://github.com/Audrum/windows_activators#english)
+    * [How to use PowerShell script](https://github.com/Audrum/windows_activators#how-to-use-powershell-script)
+    * [Downloads](https://github.com/Audrum/windows_activators#downloads)
+    * [Windows Multinstall](https://github.com/Audrum/windows_activators#windows-multinstall-1)
+    * [Office 2019](https://github.com/Audrum/windows_activators#office-2019-1)
+    * [Windows 10](https://github.com/Audrum/windows_activators#windows-10-1)
 
 ---
 
@@ -53,6 +53,7 @@ También puede abrir una sesión de PowerShell con **privilegios de administrado
 
 Las descargas se encuentran en la sección de [_Releases_](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
 
+* [multinstall.exe](https://github.com/Audrum/windows_activators/releases/download/MultinstallV1.0/multinstall.exe)
 * [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.2/multinstall.ps1)
 * [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
 * [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
@@ -97,6 +98,7 @@ También fue desarrollado siguiendo algunos parámetros de [msguides.com](https:
 
 This is a project about open source activators for windows and office written in PowerShell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
+In order to use the exexutable version just double click and use it. Sometimes it is detected by the antivirus as malware so you can temporarily disable the antivirus. If you don't trust just check the code written in [Python](https://www.python.org/) and compile it by your self.
 
 ## How to use PowerShell script
 
@@ -126,6 +128,7 @@ Alternatively you can run a PowerShell terminal with admin rights, move to the p
 
 You can download the files from the [_Releases_](https://github.com/Audrum/windows_activators/releases) section or select the file below:
 
+* [multinstall.exe](https://github.com/Audrum/windows_activators/releases/download/MultinstallV1.0/multinstall.exe)
 * [multinstall.ps1](https://github.com/Audrum/windows_activators/releases/download/0.2/multinstall.ps1)
 * [O2019.ps1](https://github.com/Audrum/windows_activators/releases/download/O2019-v0.1/O2019.ps1)
 * [W10.ps1](https://github.com/Audrum/windows_activators/releases/download/w10-v0.1/W10.ps1)
