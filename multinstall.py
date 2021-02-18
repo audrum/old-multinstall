@@ -52,7 +52,7 @@ frame_layout_result = [
 
 layout = [
 
-            [sg.Text("WORKS ONLY ON WINDOWS 10!", text_color="red")],
+            [sg.Text("WORKS ONLY ON WINDOWS 10 x64 bits!", text_color="red")],
             [sg.Frame("Programs", frame_layout_programs), sg.Frame("Activations", frame_layout_activations)],
             [sg.Submit(), sg.Cancel()],
             [sg.Frame("Result", frame_layout_result)]
