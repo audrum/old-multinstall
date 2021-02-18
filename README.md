@@ -1,7 +1,7 @@
 # Index
 * [Español](https://github.com/Audrum/windows_activators#espa%C3%B1ol)
     * [Descripción](https://github.com/Audrum/windows_activators#descripci%C3%B3n)
-    * [Instrucciones de uso versión gráfica]()
+    * [Instrucciones de uso versión gráfica](https://github.com/Audrum/windows_activators#instrucciones-de-uso-versi%C3%B3n-gr%C3%A1fica)
     * [Instrucciones de uso para el script en PowerShell](https://github.com/Audrum/windows_activators#instrucciones-de-uso-para-el-script-en-powershell)
     * [Descargas](https://github.com/Audrum/windows_activators#descargas)
     * [Windows Multinstall](https://github.com/Audrum/windows_activators#windows-multinstall)
@@ -9,8 +9,8 @@
     * [Windows 10](https://github.com/Audrum/windows_activators#windows-10)
 
 * [English](https://github.com/Audrum/windows_activators#english)
-    * [Description]()
-    * [How to use GUI version]()
+    * [Description](https://github.com/Audrum/windows_activators#description)
+    * [How to use GUI version](https://github.com/Audrum/windows_activators#how-to-use-the-gui-version)
     * [How to use PowerShell script](https://github.com/Audrum/windows_activators#how-to-use-powershell-script)
     * [Downloads](https://github.com/Audrum/windows_activators#downloads)
     * [Windows Multinstall](https://github.com/Audrum/windows_activators#windows-multinstall-1)
