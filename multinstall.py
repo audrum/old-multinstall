@@ -85,46 +85,54 @@ while True:
             print("Installing Google Chrome...")
             gc_install = subprocess.check_output("cinst GoogleChrome -y")
             print(gc_install.decode("cp850"))
+            print ("Google Chrome has been installed successfully!")
             print("")
         if values["-Firefox-"] == True:
             print("Installing Firefox...")
             fx_install = subprocess.check_output("cinst Firefox -y")
             print(fx_install.decode("cp850"))
+            print ("Firefox has been installed successfully!")
             print("")
         if values["-7zip-"] == True:
             print("Installing 7-zip...")
             sevenz_install = subprocess.check_output("cinst 7zip -y")
             print(sevenz_install.decode("cp850"))
+            print ("7-zip has been installed successfully!")
             print("")
         if values["-WinRAR-"] == True:
             print("Installing WinRAR...")
             wr_install = subprocess.check_output("cinst winrar -y")
             print(wr_install.decode("cp850"))
+            print ("WinRAR has been installed successfully!")
             print("")
         if values["-PDF24-"] == True:
             print("Installing PDF24...")
             p24_install = subprocess.check_output("cinst pdf24 -y")
             print(p24_install.decode("cp850"))
+            print ("PDF24 has been installed successfully!")
             print("")
         if values["-Office-"] == True:
             print("Installing Microsoft Office...")
             mo_install = subprocess.check_output("cinst office365proplus -y")
             print(mo_install.decode("cp850"))
+            print ("Office has been installed successfully!")
             print("")
         if values["-Project-"] == True:
             print("Installing Microsoft Project...")
             mp_install = subprocess.check_output("cinst microsoft-office-deployment --params="'/64bit /Product:ProjectPro2019Volume'" --force -y")
             print(mp_install.decode("cp850"))
+            print ("Microsoft Project has been installed successfully!")
             print("")
         if values["-Visio-"] == True:
             print("Installing Microsoft Visio...")
             mv_install = subprocess.check_output("cinst microsoft-office-deployment --params="'/64bit /Product:VisioPro2019Volume'" --force -y")
             print(mv_install.decode("cp850"))
+            print ("Microsoft Visio has been installed successfully!")
             print("")
         if values["-ActW10-"] == True:
             print("Activating Windows 10...")
             string = subprocess.check_output(["Powershell.exe", "(Get-WmiObject Win32_OperatingSystem).Caption"])
-            if "Microsoft Windows 10 Home Single Language" in string:
+            if "Microsoft Windows 10 Home Single Language" in str(string):
                 print("Installing license for Microsoft Windows 10 Home Single Language...")
                 step1 = subprocess.check_output("slmgr /ipk 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH")
                 print(step1)
@@ -132,7 +140,7 @@ while True:
                 print(step2)
                 step3 = subprocess.check_output("slmgr /ato")
                 print(step3)
-            elif "Microsoft Windows 10 Home" in string:
+            elif "Microsoft Windows 10 Home" in str(string):
                 print("Installing license for Microsoft Windows 10 Home...")
                 step1 = subprocess.check_output("slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99")
                 print(step1)
@@ -140,7 +148,7 @@ while True:
                 print(step2)
                 step3 = subprocess.check_output("slmgr /ato")
                 print(step3)
-            elif "Microsoft Windows 10 Pro" in string:
+            elif "Microsoft Windows 10 Pro" in str(string):
                 print("Installing license for Microsoft Windows 10 Pro...")
                 step1 = subprocess.check_output("slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX")
                 print(step1)
@@ -148,7 +156,7 @@ while True:
                 print(step2)
                 step3 = subprocess.check_output("slmgr /ato")
                 print(step3)
-            elif "Microsoft Windows 10 Pro N" in string:
+            elif "Microsoft Windows 10 Pro N" in str(string):
                 print("Installing license for Microsoft Windows 10 Pro...")
                 step1 = subprocess.check_output("slmgr /ipk MH37W-N47XK-V7XM9-C7227-GCQG9")
                 print(step1)
@@ -158,6 +166,7 @@ while True:
                 print(step3)
             else:
                 print("Unable to determinate Windows version, Windows not activated")
+
         if values["-ActOffice-"] == True:
             print("Activating Microsoft Office...")
             pf_dir = os.environ.get("ProgramFiles")
