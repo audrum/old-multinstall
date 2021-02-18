@@ -1,11 +1,31 @@
-# Descripción en español
+# Index
+* [Español](https://github.com/Audrum/windows_activators#descripci%C3%B3n-en-espa%C3%B1ol)
+    * [Descripción](https://github.com/Audrum/windows_activators#descripci%C3%B3n)
+    * [Instrucciones de uso para el script en PowerShell]()
+    * [Descargas]()
+    * [Windows Multinstall]()
+    * [Office 2019]()
+    * [Windows 10]()
 
-## windows_activators
+* [English]()
+    * [How to use PowerShell script]()
+    * [Downloads]()
+    * [Windows Multinstall]()
+    * [Office 2019]()
+    * [Windows 10]()
 
-Este es un proyecto de código abierto sobre activadores para Windows y Office escrito en PowerShell. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
+---
+
+# Español
+
+## Descripción
+
+Este es un proyecto de código abierto sobre activadores para Windows y Office, hay 2 versiones, uno escrito en PowerShell y otro escrito en Python. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
+
+Para usar la version ejecutable, la cual está escrita en [Python](https://www.python.org/), solo debe dar doble click y usarlo. En algunos casos es necesario desactivar el antivirus pero el código está totalmente disponible en el repositorio y puede ser compilado por usted mismo.
 
 
-## Instrucciones
+## Instrucciones de uso para el script en PowerShell
 
 **Antes** de ejecutar los scripts debe asegurarse de que su política de ejecución en PowerShell permita ejecutar scripts. Para comprobarlo primero abra PowerShell como administrador:
 
@@ -71,14 +91,14 @@ También fue desarrollado siguiendo algunos parámetros de [msguides.com](https:
 
 ---
 
-# English description
+# English
 
-## windows_activators
+## Description
 
 This is a project about open source activators for windows and office written in PowerShell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
 
-## Instructions
+## How to use PowerShell script
 
 **Before** execute the scripts be sure that your Execution Policy allows run PowerShell scripts. You can check it out first opening PowerShell as administrator:
 
