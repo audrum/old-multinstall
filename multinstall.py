@@ -119,14 +119,12 @@ while True:
             print("")
         if values["-Project-"] == True:
             print("Installing Microsoft Project...")
-            mp_install = subprocess.check_output("cinst microsoft-office-deployment --params="'/64bit /Product:ProjectPro2019Volume'" --force -y")
-            print(mp_install.decode("cp850"))
+            os.system("cinst microsoft-office-deployment --params="'/64bit /Product:ProjectPro2019Volume'" --force -y")
             print ("Microsoft Project has been installed successfully!")
             print("")
         if values["-Visio-"] == True:
             print("Installing Microsoft Visio...")
-            mv_install = subprocess.check_output("cinst microsoft-office-deployment --params="'/64bit /Product:VisioPro2019Volume'" --force -y")
-            print(mv_install.decode("cp850"))
+            os.system("cinst microsoft-office-deployment --params="'/64bit /Product:VisioPro2019Volume'" --force -y")
             print ("Microsoft Visio has been installed successfully!")
             print("")
         if values["-ActW10-"] == True:
