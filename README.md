@@ -1,6 +1,7 @@
 # Index
 * [Español](https://github.com/Audrum/windows_activators#espa%C3%B1ol)
     * [Descripción](https://github.com/Audrum/windows_activators#descripci%C3%B3n)
+    * [Instrucciones de uso versión gráfica]()
     * [Instrucciones de uso para el script en PowerShell](https://github.com/Audrum/windows_activators#instrucciones-de-uso-para-el-script-en-powershell)
     * [Descargas](https://github.com/Audrum/windows_activators#descargas)
     * [Windows Multinstall](https://github.com/Audrum/windows_activators#windows-multinstall)
@@ -8,6 +9,8 @@
     * [Windows 10](https://github.com/Audrum/windows_activators#windows-10)
 
 * [English](https://github.com/Audrum/windows_activators#english)
+    * [Description]()
+    * [How to use GUI version]()
     * [How to use PowerShell script](https://github.com/Audrum/windows_activators#how-to-use-powershell-script)
     * [Downloads](https://github.com/Audrum/windows_activators#downloads)
     * [Windows Multinstall](https://github.com/Audrum/windows_activators#windows-multinstall-1)
@@ -22,7 +25,18 @@
 
 Este es un proyecto de código abierto sobre activadores para Windows y Office, hay 2 versiones, uno escrito en PowerShell y otro escrito en Python. **Cada script se debe ejecutar con derechos de administrador**. Si tiene alguna duda, comentario o aporte, puede contactarme a través de [Telegram](https://telegram.org) buscándome como [@audrum](https://t.me/audrum).
 
+
+# Instrucciones de uso versión gráfica
+
 Para usar la version ejecutable, la cual está escrita en [Python](https://www.python.org/), solo debe dar doble click y usarlo. En algunos casos es necesario desactivar el antivirus pero el código está totalmente disponible en el repositorio y puede ser compilado por usted mismo.
+
+Al principio saldrá una ventana pidiendo verificar la instalación de [Chocolatey](https://chocolatey.org/). Si ya está instalado mostrará la versión instalada, si no, lo instalará automáticamente.
+
+![Checking Chocolatey](assets/python_E8R46G5wQY.png)
+
+Después de eso solo tendrá que seleccionar las opciones deseadas y dar click en el botón "__Submit__".
+
+![multinstall GUI](assets/python_im9zqxymwM.png)
 
 
 ## Instrucciones de uso para el script en PowerShell
@@ -98,7 +112,19 @@ También fue desarrollado siguiendo algunos parámetros de [msguides.com](https:
 
 This is a project about open source activators for windows and office written in PowerShell. **You have to open each one with admin rights**. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
+# How to use the GUI version
+
 In order to use the exexutable version just double click and use it. Sometimes it is detected by the antivirus as malware so you can temporarily disable the antivirus. If you don't trust just check the code written in [Python](https://www.python.org/) and compile it by your self.
+
+At the begining it shows a popup window asking for check [Chocolatey](https://chocolatey.org/) installation, if it is already installed it will show the current versión, if it is not installed the software will install it automatically.
+
+![Checking Chocolatey](assets/python_E8R46G5wQY.png)
+
+After that you will be able to use it just selecting the desiderable options and clicking on "__Submit__" button.
+
+![multinstall GUI](assets/python_im9zqxymwM.png)
+
+
 
 ## How to use PowerShell script
 
