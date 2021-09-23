@@ -85,13 +85,22 @@ def activate_windows():
         print("This program can't activate this Windows version, contact the creator for further help")
 
 def activate_office():
-    os.chdir("%ProgramFiles%\Microsoft Office\Office16")
-    os.system(r"for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:'..\root\Licenses16\%x'")
-    os.system("cscript ospp.vbs /setprt:1688")
-    os.system("cscript ospp.vbs /unpkey:6MWKP >nul")
-    os.system("cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP")
-    os.system("cscript ospp.vbs /sethst:s8.now.im")
-    os.system("cscript ospp.vbs /act")
+    file = open("actoffice.cmd", "a")
+    file.write("@echo off\n")
+    file.write("cd %ProgramFiles%/Microsoft Office/Office16")
+    file.write(r"for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:'..\root\Licenses16\%x'")
+    file.write("\n")
+    file.write("cscript ospp.vbs /setprt:11688\n")
+    file.write("cscript ospp.vbs /unpkey:6MWKP >nul\n")
+    file.write("cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP\n")
+    file.write("cscript ospp.vbs /sethst:s8.now.im\n")
+    file.write("cscript ospp.vbs /act\n")
+    file.close()
+
+    activate = subprocess.Popen(["actoffice.cmd"], stdout=sys.stdout)
+    activate.wait()
+
+
 
 def main():
     try:
