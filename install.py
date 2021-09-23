@@ -19,7 +19,8 @@ def usage():
     print("-z   --install-7zip              Installs 7-zip file archiver")
     print("-p   --install-pdf24             Installs PDF24")
     print("-o   --install-office            Installs Microsoft Office") 
-    print("-w   --activate_windows          Activates Microsoft Windows 10")   
+    print("-w   --activate_windows          Activates Microsoft Windows 10")  
+    print("-x   --activate_office           Activates Microsoft Office")
     print("")
     print("Example: run install.py -c to install chocolatey")
 
@@ -36,19 +37,24 @@ def install_chocolatey():
     os.remove("install_choco.ps1")
 
 def install_chrome():
-    os.system("cinst GoogleChrome -y")
+    runinstall = subprocess.Popen(["cinst", "GoogleChrome", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
 def install_firefox():
-    os.system("cinst Firefox -y")
+    runinstall = subprocess.Popen(["cinst", "Firefox", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
 def install_7zip():
-    os.system("cinst 7zip -y")
+    runinstall = subprocess.Popen(["cinst", "7zip", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
 def install_pdf24():
-    os.system("cinst pdf24 -y")
+    runinstall = subprocess.Popen(["cinst", "pdf24", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
 def install_office():
-    os.system("cinst office365proplus -y")
+    runinstall = subprocess.Popen(["cinst", "office365proplus", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
 def activate_windows():
     key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,r'SOFTWARE\Microsoft\Windows NT\CurrentVersion')
@@ -78,9 +84,18 @@ def activate_windows():
     else:
         print("This program can't activate this Windows version, contact the creator for further help")
 
+def activate_office():
+    os.chdir("%ProgramFiles%\Microsoft Office\Office16")
+    os.system(r"for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:'..\root\Licenses16\%x'")
+    os.system("cscript ospp.vbs /setprt:1688")
+    os.system("cscript ospp.vbs /unpkey:6MWKP >nul")
+    os.system("cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP")
+    os.system("cscript ospp.vbs /sethst:s8.now.im")
+    os.system("cscript ospp.vbs /act")
+
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hIcfzpow", ["help", "install-chocolatey", "install-chrome", "install-firefox", "install-7zip", "install-pdf24", "install-office", "activate-windows"])
+        opts, args = getopt.getopt(sys.argv[1:], "hIcfzpowx", ["help", "install-chocolatey", "install-chrome", "install-firefox", "install-7zip", "install-pdf24", "install-office", "activate-windows", "activate-office"])
     except getopt.GetoptError as err:
         print(err)
         print("Try %s -h for help" % sys.argv[0])
@@ -102,6 +117,8 @@ def main():
             install_office()
         elif o in ['-w', '--activate-windows']:
             activate_windows()
+        elif o in ['-x', '--activate-office']:
+            activate_office()
         else:
             usage()
 
