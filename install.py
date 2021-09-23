@@ -87,7 +87,7 @@ def activate_windows():
 def activate_office():
     file = open("actoffice.cmd", "a")
     file.write("@echo off\n")
-    file.write("cd %ProgramFiles%/Microsoft Office/Office16")
+    file.write("cd %ProgramFiles%/Microsoft Office/Office16\n")
     file.write(r"for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:'..\root\Licenses16\%x'")
     file.write("\n")
     file.write("cscript ospp.vbs /setprt:11688\n")
