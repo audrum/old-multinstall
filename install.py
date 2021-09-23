@@ -1,7 +1,7 @@
 import sys
 import getopt
 import subprocess
-import time
+import winreg
 import os
 import platform
 
@@ -32,6 +32,7 @@ def install_chocolatey():
     runscript.communicate()
 
     runscript.wait()
+    os.system("refreshenv")
     os.remove("install_choco.ps1")
 
 def install_chrome():
@@ -50,14 +51,32 @@ def install_office():
     os.system("cinst office365proplus -y")
 
 def activate_windows():
-    windowsversion = platform.win32_edition()
-    print(windowsversion)
+    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,r'SOFTWARE\Microsoft\Windows NT\CurrentVersion')
+    value = winreg.QueryValueEx(key, "ProductName")[0]
 
-    if windowsversion == "CoreSingleLanguage":
+    print("Detected version %s installed" % value)
+    print("Trying to activate %s..." % value)
+
+    if value == "Windows 10 Home Single Language":
         os.system("slmgr /ipk 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH")
         os.system("slmgr /skms kms8.msguides.com")
         os.system("slmgr /ato")
-        print("===Windows has been activated...")
+        print("===%s has been activated..." % value)
+    
+    elif value == "Windows 10 Home":
+        os.system("slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99")
+        os.system("slmgr /skms kms8.msguides.com")
+        os.system("slmgr /ato")
+        print("===%s has been activated..." % value)
+
+    elif value == "Windows 10 Pro":
+        os.system("slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX")
+        os.system("slmgr /skms kms8.msguides.com")
+        os.system("slmgr /ato")
+        print("===%s has been activated..." % value)
+
+    else:
+        print("This program can't activate this Windows version, contact the creator for further help")
 
 def main():
     try:
