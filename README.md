@@ -6,7 +6,7 @@
 
 * [English](https://github.com/Audrum/windows_activators#english)
     * [Description](https://github.com/Audrum/windows_activators#description)
-    * [How to use](https://github.com/Audrum/windows_activators#how-to-use)
+    * [How to use it](https://github.com/Audrum/windows_activators#how-to-use-it)
     * [Downloads](https://github.com/Audrum/windows_activators#downloads)
 
 ---
