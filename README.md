@@ -1,12 +1,12 @@
 # Index
 * [Español](https://github.com/Audrum/windows_activators#espa%C3%B1ol)
     * [Descripción](https://github.com/Audrum/windows_activators#descripci%C3%B3n)
-    * [Instrucciones de uso]()
+    * [Instrucciones de uso](https://github.com/Audrum/windows_activators#instrucciones-de-uso)
     * [Descargas](https://github.com/Audrum/windows_activators#descargas)
 
 * [English](https://github.com/Audrum/windows_activators#english)
     * [Description](https://github.com/Audrum/windows_activators#description)
-    * [How to use]()
+    * [How to use](https://github.com/Audrum/windows_activators#how-to-use)
     * [Downloads](https://github.com/Audrum/windows_activators#downloads)
 
 ---
@@ -56,8 +56,8 @@ Como se detalla en el menú de ayuda las diferentes opciones disponibles son:
 
 Las descargas se encuentran en la sección de [_Releases_](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
 
-* [Multinstall.exe]()
-* [Multinstall.py]()
+* [Multinstall.exe](https://github.com/Audrum/windows_activators/releases/download/v0.1sp/Multinstall.exe)
+* [Multinstall.py](https://github.com/Audrum/windows_activators/releases/download/v0.1sp/Multinstall.py)
 
 ---
 
@@ -105,5 +105,5 @@ The different options available to use are:
 
 You can download the files from the [_Releases_](https://github.com/Audrum/windows_activators/releases) section or select the file below:
 
-* [Multinstall.exe]()
-* [Multinstall.py]()
+* [Multinstall.exe](https://github.com/Audrum/windows_activators/releases/download/v0.1en/Multinstall.exe)
+* [Multinstall.py](https://github.com/Audrum/windows_activators/releases/download/v0.1en/Multinstall.py)
