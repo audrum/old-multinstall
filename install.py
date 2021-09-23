@@ -31,7 +31,7 @@ def install_chocolatey():
     runscript = subprocess.Popen(["PowerShell.exe", "./install_choco.ps1"], stdout=sys.stdout)
     runscript.communicate()
 
-    time.sleep(30)
+    runscript.wait()
     os.remove("install_choco.ps1")
 
 def install_chrome():
