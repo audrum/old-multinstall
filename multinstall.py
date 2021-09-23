@@ -1,232 +1,139 @@
-import PySimpleGUI as sg
-import subprocess
 import sys
+import getopt
+import subprocess
+import winreg
 import os
+import colorama
+from colorama.ansi import Fore, Style
 
-column_programs_1 = [
+def usage():
+    colorama.init()
+    print("%s v0.1" % sys.argv[0])
+    print("Useful tool for installing and activating basic software")
+    print(Fore.YELLOW + "===============================================================")
+    print("FIRST AT ALL PLEASE USE ARGUMENT -I BEFORE USE ANY OTHER OPTION")
+    print("===============================================================" + Style.RESET_ALL)
+    print("Usage: %s [OPTIONS...]:" % sys.argv[0])
+    print("-h   --help                      Get how to use it information")
+    print("-I   --install-chocolatey        Installs Chocolatey, mandatory before running any other arguments")
+    print("-c   --install-chrome            Installs Google Chrome browser")
+    print("-f   --install-firefox           Installs Mozilla Firefox browser")
+    print("-z   --install-7zip              Installs 7-zip file archiver")
+    print("-p   --install-pdf24             Installs PDF24")
+    print("-o   --install-office            Installs Microsoft Office") 
+    print("-w   --activate_windows          Activates Microsoft Windows 10")  
+    print("-x   --activate_office           Activates Microsoft Office")
+    print("")
+    print("Example: run install.py -I to install chocolatey")
 
-            [sg.Checkbox("Google Chrome", key="-GoogleChrome-")],
-            [sg.Checkbox("7-Zip", key="-7zip-")],
-            [sg.Checkbox("PDF24", key="-PDF24-")],
-            [sg.Checkbox("Microsoft Project", key="-Project-")]
-                              
-]
+def install_chocolatey():
+    installscript = open("install_choco.ps1", "a")
+    installscript.write("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))")
+    installscript.close()
 
-column_programs_2 = [
+    runscript = subprocess.Popen(["PowerShell.exe", "./install_choco.ps1"], stdout=sys.stdout)
+    runscript.communicate()
 
-            [sg.Checkbox("Firefox", key="-Firefox-")],
-            [sg.Checkbox("WinRAR", key="-WinRAR-")],
-            [sg.Checkbox("Microsoft Office", key="-Office-")],
-            [sg.Checkbox("Microsoft Visio", key="-Visio-")]
-                              
-]
+    runscript.wait()
+    os.system("refreshenv")
+    os.remove("install_choco.ps1")
 
-column_activations_1 = [
+def install_chrome():
+    runinstall = subprocess.Popen(["cinst", "GoogleChrome", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
-            [sg.Checkbox("Windows 10", key="-ActW10-")],
-            [sg.Checkbox("Microsoft Project", key="-ActProject-")]
-]
+def install_firefox():
+    runinstall = subprocess.Popen(["cinst", "Firefox", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
-column_activations_2 = [
+def install_7zip():
+    runinstall = subprocess.Popen(["cinst", "7zip", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
-            [sg.Checkbox("Microsoft Office", key="-ActOffice-")],
-            [sg.Checkbox("Microsoft Visio", key="-ActVisio-")]
-]
+def install_pdf24():
+    runinstall = subprocess.Popen(["cinst", "pdf24", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
-frame_layout_programs = [
+def install_office():
+    runinstall = subprocess.Popen(["cinst", "office365proplus", "-y"], stdout=sys.stdout)
+    runinstall.wait()
 
-            [sg.Text("Please select the programs to install")],
-            [sg.Col(column_programs_1), sg.Col(column_programs_2)]
-]
+def activate_windows():
+    key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,r'SOFTWARE\Microsoft\Windows NT\CurrentVersion')
+    value = winreg.QueryValueEx(key, "ProductName")[0]
 
-frame_layout_activations = [
+    print("Detected version %s installed" % value)
+    print("Trying to activate %s..." % value)
 
-            [sg.Text("Please select the software to activate")],
-            [sg.Col(column_activations_1), sg.Col(column_activations_2)]
-]
-
-frame_layout_result = [
-
-            [sg.Output(size=(80,10))]
-]
-
-layout = [
-
-            [sg.Text("WORKS ONLY ON WINDOWS 10 x64 bits!", text_color="red")],
-            [sg.Frame("Programs", frame_layout_programs), sg.Frame("Activations", frame_layout_activations)],
-            [sg.Submit(), sg.Cancel()],
-            [sg.Frame("Result", frame_layout_result)]
-]
-
-window = sg.Window("Multinstaller", layout) 
-
-agree = sg.popup_yes_no("Checking System", "This program needs Chocolatey in order to work properly, we will check if it is installed, if not it will be installed, do you agree?")
-
-if agree == "Yes":
-
-    if "ChocolateyLastPathUpdate" in os.environ:
-        version = subprocess.check_output("choco -v")
-        sg.Popup("You already have installed Chocolatey version", version.decode("cp850"))
+    if value == "Windows 10 Home Single Language":
+        os.system("slmgr /ipk 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH")
+        os.system("slmgr /skms kms8.msguides.com")
+        os.system("slmgr /ato")
+        print("===%s has been activated..." % value)
     
+    elif value == "Windows 10 Home":
+        os.system("slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99")
+        os.system("slmgr /skms kms8.msguides.com")
+        os.system("slmgr /ato")
+        print("===%s has been activated..." % value)
+
+    elif value == "Windows 10 Pro":
+        os.system("slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX")
+        os.system("slmgr /skms kms8.msguides.com")
+        os.system("slmgr /ato")
+        print("===%s has been activated..." % value)
+
     else:
-        choco_install = subprocess.check_output(["Powershell.exe", "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"])
-        [sg.popup_scrolled("Chocolatey is not installed, installing...", choco_install.decode("cp850"))]
+        print("This program can't activate this Windows version, contact the creator for further help")
 
-else:
-    exit()
+def activate_office():
+    file = open("actoffice.cmd", "a")
+    file.write("@echo off\n")
+    file.write('''
+    (if exist "%ProgramFiles%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office16")&(if exist "%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office16")&(for /f %%x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%%x")&(for /f %%x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%%x)
+    ''')
+    file.write("\n")
+    file.write("cscript ospp.vbs /setprt:1688\n")
+    file.write("cscript ospp.vbs /unpkey:6MWKP >nul\n")
+    file.write("cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP\n")
+    file.write("cscript ospp.vbs /sethst:kms8.msguides.com\n")
+    file.write("cscript ospp.vbs /act\n")
+    file.close()
 
-while True:
-    event,  values = window.read()
-    if event == sg.WIN_CLOSED or event == "Cancel":
-        break
+    activate = subprocess.Popen(["actoffice.cmd"], stdout=sys.stdout)
+    activate.wait()
 
-    elif event == "Submit":
-        if values["-GoogleChrome-"] == True:
-            print("Installing Google Chrome...")
-            gc_install = subprocess.check_output("cinst GoogleChrome -y")
-            print(gc_install.decode("cp850"))
-            print ("Google Chrome has been installed successfully!")
-            print("")
-        if values["-Firefox-"] == True:
-            print("Installing Firefox...")
-            fx_install = subprocess.check_output("cinst Firefox -y")
-            print(fx_install.decode("cp850"))
-            print ("Firefox has been installed successfully!")
-            print("")
-        if values["-7zip-"] == True:
-            print("Installing 7-zip...")
-            sevenz_install = subprocess.check_output("cinst 7zip -y")
-            print(sevenz_install.decode("cp850"))
-            print ("7-zip has been installed successfully!")
-            print("")
-        if values["-WinRAR-"] == True:
-            print("Installing WinRAR...")
-            wr_install = subprocess.check_output("cinst winrar -y")
-            print(wr_install.decode("cp850"))
-            print ("WinRAR has been installed successfully!")
-            print("")
-        if values["-PDF24-"] == True:
-            print("Installing PDF24...")
-            p24_install = subprocess.check_output("cinst pdf24 -y")
-            print(p24_install.decode("cp850"))
-            print ("PDF24 has been installed successfully!")
-            print("")
-        if values["-Office-"] == True:
-            print("Installing Microsoft Office...")
-            mo_install = subprocess.check_output("cinst office365proplus -y")
-            print(mo_install.decode("cp850"))
-            print ("Office has been installed successfully!")
-            print("")
-        if values["-Project-"] == True:
-            print("Installing Microsoft Project...")
-            os.system("cinst microsoft-office-deployment --params="'/64bit /Product:ProjectPro2019Volume'" --force -y")
-            print ("Microsoft Project has been installed successfully!")
-            print("")
-        if values["-Visio-"] == True:
-            print("Installing Microsoft Visio...")
-            os.system("cinst microsoft-office-deployment --params="'/64bit /Product:VisioPro2019Volume'" --force -y")
-            print ("Microsoft Visio has been installed successfully!")
-            print("")
-        if values["-ActW10-"] == True:
-            print("Activating Windows 10...")
-            string = subprocess.check_output(["Powershell.exe", "(Get-WmiObject Win32_OperatingSystem).Caption"])
-            if "Microsoft Windows 10 Home Single Language" in str(string):
-                print("Installing license for Microsoft Windows 10 Home Single Language...")
-                step1 = subprocess.check_output("slmgr /ipk 7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH")
-                print(step1)
-                step2 = subprocess.check_output("slmgr /skms kms8.msguides.com")
-                print(step2)
-                step3 = subprocess.check_output("slmgr /ato")
-                print(step3)
-            elif "Microsoft Windows 10 Home" in str(string):
-                print("Installing license for Microsoft Windows 10 Home...")
-                step1 = subprocess.check_output("slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99")
-                print(step1)
-                step2 = subprocess.check_output("slmgr /skms kms8.msguides.com")
-                print(step2)
-                step3 = subprocess.check_output("slmgr /ato")
-                print(step3)
-            elif "Microsoft Windows 10 Pro" in str(string):
-                print("Installing license for Microsoft Windows 10 Pro...")
-                step1 = subprocess.check_output("slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX")
-                print(step1)
-                step2 = subprocess.check_output("slmgr /skms kms8.msguides.com")
-                print(step2)
-                step3 = subprocess.check_output("slmgr /ato")
-                print(step3)
-            elif "Microsoft Windows 10 Pro N" in str(string):
-                print("Installing license for Microsoft Windows 10 Pro...")
-                step1 = subprocess.check_output("slmgr /ipk MH37W-N47XK-V7XM9-C7227-GCQG9")
-                print(step1)
-                step2 = subprocess.check_output("slmgr /skms kms8.msguides.com")
-                print(step2)
-                step3 = subprocess.check_output("slmgr /ato")
-                print(step3)
-            else:
-                print("Unable to determinate Windows version, Windows not activated")
+    os.remove("actoffice.cmd")
 
-        if values["-ActOffice-"] == True:
-            print("Activating Microsoft Office...")
-            pf_dir = os.environ.get("ProgramFiles")
-            office_dir = pf_dir+"/Microsoft Office/root/Licenses16/"
-            office_script = pf_dir+"/Microsoft Office/Office16/"
-            files = os.listdir(office_dir)
 
-            for i in files:
-                if "ProPlus2019VL" in i:
-                    os.system("cd " + office_script + " && " + "cscript ospp.vbs /inslic:" + '"' + "../root/licenses16/" + i + '"')
 
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /setprt:1688")
-            print("Conecting to port...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /unpkey:6MWKP >nul")
-            print("Changing key...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP")
-            print("Installing new key...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /sethst:kms8.msguides.com")
-            print("Connecting to server for activation...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /act")
-            print("Microsoft Office has been activated!")
-        if values["-ActProject-"] == True:
-            print("Activating Microsoft Project...")
-            pf_dir = os.environ.get("ProgramFiles")
-            office_dir = pf_dir+"/Microsoft Office/root/Licenses16/"
-            office_script = pf_dir+"/Microsoft Office/Office16/"
-            files = os.listdir(office_dir)
+def main():
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "hIcfzpowx", ["help", "install-chocolatey", "install-chrome", "install-firefox", "install-7zip", "install-pdf24", "install-office", "activate-windows", "activate-office"])
+    except getopt.GetoptError as err:
+        print(err)
+        print("Try %s -h for help" % sys.argv[0])
+        sys.exit(0)
+    for o, a in opts:
+        if o in ['-h', '--help']:
+            usage()
+        elif o in ['-I', '--install_chocolatey']:
+            install_chocolatey()
+        elif o in ['-c', '--install-chrome']:
+            install_chrome()
+        elif o in ['-f', '--install-firefox']:
+            install_firefox()
+        elif o in ['-z', '--install-7zip']:
+            install_7zip()
+        elif o in ['-p', '--install-pdf24']:
+            install_pdf24()
+        elif o in ['-o', '--install-office']:
+            install_office()
+        elif o in ['-w', '--activate-windows']:
+            activate_windows()
+        elif o in ['-x', '--activate-office']:
+            activate_office()
+        else:
+            usage()
 
-            for i in files:
-                if "ProjectPro2019VL_KMS" in i:
-                    os.system("cd " + office_script + " && " + "cscript ospp.vbs /inslic:" + '"' + "../root/licenses16/" + i + '"')
-
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /setprt:1688")
-            print("Conecting to port...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /unpkey:6MWKP >nul")
-            print("Changing key...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /inpkey:B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B")
-            print("Installing new key...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /sethst:kms8.msguides.com")
-            print("Connecting to server for activation...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /act")
-            print("Microsoft Project has been activated!")
-        if values["-ActVisio-"] == True:
-            print("Activating Microsoft Project...")
-            pf_dir = os.environ.get("ProgramFiles")
-            office_dir = pf_dir+"/Microsoft Office/root/Licenses16/"
-            office_script = pf_dir+"/Microsoft Office/Office16/"
-            files = os.listdir(office_dir)
-
-            for i in files:
-                if "VisioPro2019VL_KMS" in i:
-                    os.system("cd " + office_script + " && " + "cscript ospp.vbs /inslic:" + '"' + "../root/licenses16/" + i + '"')
-
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /setprt:1688")
-            print("Conecting to port...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /unpkey:6MWKP >nul")
-            print("Changing key...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /inpkey:9BGNQ-K37YR-RQHF2-38RQ3-7VCBB")
-            print("Installing new key...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /sethst:kms8.msguides.com")
-            print("Connecting to server for activation...")
-            os.system("cd " + office_script + " && " + "cscript ospp.vbs /act")
-            print("Microsoft Visio has been activated!")
-
-window.close()
+main()
