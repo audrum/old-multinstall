@@ -6,7 +6,7 @@
 
 * [English](https://github.com/Audrum/windows_activators#english)
     * [Description](https://github.com/Audrum/windows_activators#description)
-    * [How to use](https://github.com/Audrum/windows_activators#how-to-use)
+    * [How to use it](https://github.com/Audrum/windows_activators#how-to-use-it)
     * [Downloads](https://github.com/Audrum/windows_activators#downloads)
 
 ---
@@ -67,7 +67,7 @@ Las descargas se encuentran en la sección de [_Releases_](https://github.com/Au
 
 This is an open source project written in [Python](https://www.python.org) to make easier the post-installation process in Windows machines. If you have any doubt, comment or contribution, you can contact me through [Telegram](https://telegram.org) by my username [@audrum](https://t.me/audrum).
 
-# How to use
+# How to use it
 
 Just donwload it and open a PowerShell temrinal **WITH ADMIN RIGHTS** in the same path of the downloaded file and run it with the argument _**-h**_ to get help information and its different options.
 
