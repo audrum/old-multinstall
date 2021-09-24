@@ -20,7 +20,7 @@ Este es un proyecto de código abierto escrito en [Python](https://www.python.or
 
 # Instrucciones de uso
 
-Solo debe descargarlo y abrir una ventana de PowerShell **CON DERECHOS DE ADMINISTRADOR** en la ruta dónde se descargó el archivo e invocarlo con el parámetro _**-h**_ para ver la ayuda y las diferentes opnciones:
+Solo debe descargarlo y abrir una ventana de PowerShell **CON DERECHOS DE ADMINISTRADOR** en la ruta dónde se descargó el archivo e invocarlo con el parámetro _**-h**_ para ver la ayuda y las diferentes opciones:
 
 ```PowerShell
 .\Multinstall.exe -h
