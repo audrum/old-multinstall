@@ -21,8 +21,8 @@ def usage():
     print("-z   --install-7zip              Installs 7-zip file archiver")
     print("-p   --install-pdf24             Installs PDF24")
     print("-o   --install-office            Installs Microsoft Office") 
-    print("-w   --activate_windows          Activates Microsoft Windows 10")  
-    print("-x   --activate_office           Activates Microsoft Office")
+    print("-w   --activate-windows          Activates Microsoft Windows 10")  
+    print("-x   --activate-office           Activates Microsoft Office")
     print("")
     print("Example: run install.py -I to install chocolatey")
 
