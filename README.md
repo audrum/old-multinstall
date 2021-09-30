@@ -1,13 +1,17 @@
 # Index
-* [Español](https://github.com/Audrum/windows_activators#espa%C3%B1ol)
-    * [Descripción](https://github.com/Audrum/windows_activators#descripci%C3%B3n)
-    * [Instrucciones de uso](https://github.com/Audrum/windows_activators#instrucciones-de-uso)
-    * [Descargas](https://github.com/Audrum/windows_activators#descargas)
+* [Español](https://github.com/Audrum/multinstall#espa%C3%B1ol)
+    * [Descripción](https://github.com/Audrum/multinstall#descripci%C3%B3n)
+    * [Instrucciones de uso](https://github.com/Audrum/multinstall#instrucciones-de-uso)
+    * [¡Importante!](https://github.com/Audrum/multinstall#importante)
+    * [Descargas](https://github.com/Audrum/multinstall#descargas)
+    * [Desinstalar o eliminar](https://github.com/Audrum/multinstall#desinstalar-o-eliminar)
 
-* [English](https://github.com/Audrum/windows_activators#english)
-    * [Description](https://github.com/Audrum/windows_activators#description)
-    * [How to use it](https://github.com/Audrum/windows_activators#how-to-use-it)
-    * [Downloads](https://github.com/Audrum/windows_activators#downloads)
+* [English](https://github.com/Audrum/multinstall#english)
+    * [Description](https://github.com/Audrum/multinstall#description)
+    * [How to use it](https://github.com/Audrum/multinstall#how-to-use-it)
+    * [Important!](https://github.com/Audrum/multinstall#important)
+    * [Downloads](https://github.com/Audrum/multinstall#downloads)
+    * [Uninstall or Delete](https://github.com/Audrum/multinstall#unistall-or-delete)
 
 ---
 
@@ -57,10 +61,10 @@ Como se detalla en el menú de ayuda las diferentes opciones disponibles son:
 
 Las descargas se encuentran en la sección de [_Releases_](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
 
-* [Multinstall.exe](https://github.com/Audrum/windows_activators/releases/download/Multinstallv0.1/multinstall.sfx.exe)
-* [Multinstall.py](https://github.com/Audrum/windows_activators/releases/download/Multinstallv0.1/multinstall.py)
+* [Multinstall.exe](https://github.com/Audrum/multinstall/releases/download/Multinstallv0.1/multinstall.sfx.exe)
+* [Multinstall.py](https://github.com/Audrum/multinstall/releases/download/Multinstallv0.1/multinstall.py)
 
-## Desinstalar o elimniar
+## Desinstalar o eliminar
 
 Para desinstalar o eliminar el software, simplemente se debe eliminar la carpeta __Multinstall__ ubicada en **C:/**.
 
@@ -111,8 +115,8 @@ The different options available to use are:
 
 You can download the files from the [_Releases_](https://github.com/Audrum/windows_activators/releases) section or select the file below:
 
-* [Multinstall.exe](https://github.com/Audrum/windows_activators/releases/download/v0.1en/Multinstall.exe)
-* [Multinstall.py](https://github.com/Audrum/windows_activators/releases/download/v0.1en/Multinstall.py)
+* [Multinstall.exe](https://github.com/Audrum/multinstall/releases/download/Multinstallv0.1/multinstall.sfx.exe)
+* [Multinstall.py](https://github.com/Audrum/multinstall/releases/download/Multinstallv0.1/multinstall.py)
 
 ## Unistall or delete
 
