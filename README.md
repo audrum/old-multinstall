@@ -50,8 +50,8 @@ Como se detalla en el menú de ayuda las diferentes opciones disponibles son:
 | -z | --install-7zip | Instala 7-zip |
 | -p | --install-pdf24 | Instala PDF24 |
 | -o | --install-office | Instala Microsoft Office |
-| -w | --activate_windows | Activa Microsoft Windows 10 |
-| -x | --activate_office | Activa Microsoft Office |
+| -w | --activate-windows | Activa Microsoft Windows 10 |
+| -x | --activate-office | Activa Microsoft Office |
 
 ## Descargas
 
@@ -104,8 +104,8 @@ The different options available to use are:
 | -z | --install-7zip | Installs 7-zip file archiver |
 | -p | --install-pdf24 | Installs PDF24 |
 | -o | --install-office | Installs Microsoft Office |
-| -w | --activate_windows | Activates Microsoft Windows 10 |
-| -x | --activate_office | Activates Microsoft Office |
+| -w | --activate-windows | Activates Microsoft Windows 10 |
+| -x | --activate-office | Activates Microsoft Office |
 
 ## Downloads
 
