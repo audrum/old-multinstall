@@ -35,6 +35,8 @@ def install_chocolatey():
     runscript.communicate()
     runscript.wait()
 
+    print("Please restart PowerShell")
+
 def install_chrome():
     runinstall = subprocess.Popen(["cinst", "GoogleChrome", "-y"], stdout=sys.stdout)
     runinstall.wait()
