@@ -27,16 +27,13 @@ def usage():
     print("Example: run install.py -I to install chocolatey")
 
 def install_chocolatey():
-    installscript = open("install_choco.ps1", "a")
-    installscript.write("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))")
-    installscript.close()
-
-    runscript = subprocess.Popen(["PowerShell.exe", "./install_choco.ps1"], stdout=sys.stdout)
+    runscript = subprocess.Popen(["PowerShell.exe", "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"], stdout=sys.stdout)
     runscript.communicate()
-
     runscript.wait()
-    subprocess.Popen(["refreshenv"], stdout=sys.stdout)
-    os.remove("install_choco.ps1")
+    
+    runscript = subprocess.Popen(["PowerShell.exe", "refreshenv"], stdout=sys.stdout)
+    runscript.communicate()
+    runscript.wait()
 
 def install_chrome():
     runinstall = subprocess.Popen(["cinst", "GoogleChrome", "-y"], stdout=sys.stdout)
@@ -106,34 +103,58 @@ def activate_windows():
 
 def activate_office():
     print("Activating..")
-    file = open("actoffice.cmd", "a")
-    file.write("@echo off\n")
+    file = open("actoffice.ps1", "a")
     file.write('''
-    @echo off
-    title Multinstall&cls&echo =====================================================================================&echo #Project: Activating Microsoft Office&echo =====================================================================================&echo.&echo #Supported products:&echo - Microsoft Office Standard 2019&echo - Microsoft Office Professional Plus 2019&echo.&echo.&(if exist "%ProgramFiles%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office16")&(if exist "%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office16")&(for /f %%x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%%x" >nul)&(for /f %%x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%%x" >nul)&echo.&echo ============================================================================&echo Activating your Office...&cscript //nologo slmgr.vbs /ckms >nul&cscript //nologo ospp.vbs /setprt:1688 >nul&cscript //nologo ospp.vbs /unpkey:6MWKP >nul&set i=1&cscript //nologo ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP >nul||goto notsupported
-    :skms
-    if %i% GTR 10 goto busy
-    if %i% EQU 1 set KMS=kms8.msguides.com
-    if %i% EQU 2 set KMS=s8.now.im
-    if %i% EQU 3 set KMS=s9.now.im
-    if %i% GTR 3 goto ato
-    cscript //nologo ospp.vbs /sethst:%KMS% >nul
-    :ato
-    echo ============================================================================&echo.&echo.&cscript //nologo ospp.vbs /act | find /i "successful" && (echo.&echo ============================================================================&echo.&echo #Repository: github.com/audrum&echo.&echo #Please feel free to contact me at t.me/audrum if you have any questions or concerns.&echo.&echo ============================================================================) || (echo The connection to the KMS server failed! Trying to connect to another one... & echo Please wait... & echo. & echo. & set /a i+=1 & goto skms)
-    goto halt
-    :notsupported
-    echo ============================================================================&echo.&echo Sorry, your version is not supported.&echo.&goto halt
-    :busy
-    echo ============================================================================&echo.&echo Sorry, the server is busy and can't respond to your request. Please try again.&echo.
-    :halt
-    pause >nul
+    if(Test-Path "$env:ProgramFiles/Microsoft Office/Office16")
+            {
+                Set-Location "$env:ProgramFiles/Microsoft Office/Office16"
+
+                Get-ChildItem "$env:ProgramFiles/Microsoft Office/root/Licenses16/" | Foreach-Object {
+                if($_.Name.StartsWith('ProPlus2019VL'))
+                {
+                    cscript ospp.vbs /inslic:"../root/Licenses16/$_"
+                }
+                }
+
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6MWKP >nul
+                cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /act
+
+                Write-Host "Office has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+            }
+
+    else
+            {
+                Set-Location "$env:ProgramFiles(x86)/Microsoft Office/Office16"
+
+                Get-ChildItem "$env:ProgramFiles(x86)/Microsoft Office/root/Licenses16" | Foreach-Object {
+                if($_.Name.StartsWith('ProPlus2019VL'))
+                {
+                    cscript ospp.vbs /inslic:"../root/Licenses16/$_"
+                }
+                }
+
+                cscript ospp.vbs /setprt:1688
+                cscript ospp.vbs /unpkey:6MWKP >nul
+                cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+                cscript ospp.vbs /sethst:kms8.msguides.com
+                cscript ospp.vbs /act
+
+                Write-Host "Office has been activated successfully" -ForegroundColor Green
+                Write-Host ""
+                Start-Sleep -s 3
+              }
     ''')
     file.close()
 
-    activate = subprocess.Popen(["actoffice.cmd"], stdout=sys.stdout)
+    activate = subprocess.Popen(["PowerShell.exe", "./actoffice.ps1"], stdout=sys.stdout)
     activate.wait()
 
-    os.remove("actoffice.cmd")
+    os.remove("actoffice.ps1")
 
 
 
