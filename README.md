@@ -61,8 +61,9 @@ Como se detalla en el menú de ayuda las diferentes opciones disponibles son:
 
 Las descargas se encuentran en la sección de [_Releases_](https://github.com/Audrum/windows_activators/releases) o puede seleccionar el archivo a continuación:
 
-* [Multinstall.exe](https://github.com/Audrum/multinstall/releases/download/Multinstallv0.1/multinstall.sfx.exe)
-* [Multinstall.py](https://github.com/Audrum/multinstall/releases/download/Multinstallv0.1/multinstall.py)
+* [multinstall.exe](https://github.com/Audrum/multinstall/releases/download/multinstallv0.1/multinstall.sfx.exe)
+* [multinstall.py](https://github.com/Audrum/multinstall/releases/download/multinstallv0.1/multinstall.py)
+* [multinstall.zip](https://github.com/Audrum/multinstall/releases/download/multinstallv0.1/multinstall.zip)
 
 ## Desinstalar o eliminar
 
